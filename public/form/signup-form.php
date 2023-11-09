@@ -48,11 +48,11 @@
             <label for="floatingInput">Username</label>
           </div>
           <div class="form-floating">
-            <input type="password1" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
           <div class="form-floating">
-            <input type="confirmpassword" class="form-control" id="floatingPassword" placeholder="Confirm Password">
+            <input type="confirmpassword" class="form-control" id="floatingPassword" name="confirmPassword" placeholder="Confirm Password">
             <label for="floatingPassword">Confirm Password</label>
           </div>
       

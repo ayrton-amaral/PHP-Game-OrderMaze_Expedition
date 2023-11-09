@@ -25,7 +25,6 @@
       }
       #btnLogin{
         background-color: #5775FF;
-        margin-top:10px;
         border: 0px;
       }
         
@@ -63,9 +62,6 @@
         <button class="btn btn-primary w-100 py-2" onclick="window.location.href = 'signin-form.php';" id= "btnLogin">Login</button>
 
       </main>
-
-      <div class="d-flex justify-content-center">
-    </div>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<?php include_once 'C:\wamp64\www\php-final-project\public\template\head.php' ?>
+<?php include_once __DIR__ . '\..\template\head.php' ; ?>
 
     <title>Change password</title>
     <style>

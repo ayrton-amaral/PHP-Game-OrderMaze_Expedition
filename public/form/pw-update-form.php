@@ -22,7 +22,6 @@
       }
       #btnLogin{
         background-color: #5775FF;
-        margin-top:10px;
         border: 0px;
       }
         
@@ -53,8 +52,6 @@
 
       </main>
 
-      <div class="d-flex justify-content-center">
-    </div>
 
 </body>
 </html>

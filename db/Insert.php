@@ -17,5 +17,4 @@ function createPlayer($fname, $lname, $userName, $password) {
 
 }
 
-createPlayer("teste3","teste2", "teste5","teste2");
 ?>

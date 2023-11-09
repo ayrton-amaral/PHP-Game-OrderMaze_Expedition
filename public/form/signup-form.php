@@ -1,8 +1,8 @@
 <html>
 <head>
     <?php include_once __DIR__ . '\..\template\head.php' ; ?>
+    <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
     <title>SignUp</title>
-
     <style>
       body{
         background-color: #8F3AC6;
@@ -52,9 +52,10 @@
             <label for="floatingPassword">Password</label>
           </div>
           <div class="form-floating">
-            <input type="confirmpassword" class="form-control" id="floatingPassword" name="confirmPassword" placeholder="Confirm Password">
+            <input type="confirmpassword" class="form-control" id="floatingPassword" name="confirmPassword" placeholder="Confirm Password" onkeyup="confirmPassword2()">
             <label for="floatingPassword">Confirm Password</label>
           </div>
+          <div id="confirmPasswordMsg"></div>
       
           <button class="btn btn-primary w-100 py-2" id= "buttonSubmit" type="submit">Create account</button>
 

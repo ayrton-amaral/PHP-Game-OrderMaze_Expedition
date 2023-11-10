@@ -1,18 +1,22 @@
-function confirmPassword2() {
-    document.getElementById("confirmPasswordMsg").innerHTML = "";
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirmPassword").value;
+const URL = window.location.origin;
+const AJAX_URL = URL + "/php-final-project/src/signup-onkeyup/pcode2-ajax.php";
+
+function ajaxConfirmPassword() {
+    document.getElementById("ajaxConfirmPasswordMsg").innerHTML = "";
+    let password =  document.getElementById("floatingPassword").value;
+    let confirmPassword =  document.getElementById("floatingConfirmPassword").value;
     var xmlhttp = new AsyncRequest();
     xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4) {
         if (this.status == 200) {
             if (this.responseText != null) {
-                document.getElementById("confirmPasswordMsg").innerHTML = this.responseText;
+                document.getElementById("ajaxConfirmPasswordMsg").innerHTML = this.responseText;
             }
         }
     }
     };
-    xmlhttp.open("GET", "pcode2-ajax.php?password=" + password + "&confirmPassword=" + confirmPassword, true);
+    let queryParam = "?password="+password+"&confirmPassword="+confirmPassword;
+    xmlhttp.open("GET", AJAX_URL + queryParam, true);
     xmlhttp.send();
 
   }
@@ -38,3 +42,4 @@ function AsyncRequest() {
     }
     return request;
   }
+  

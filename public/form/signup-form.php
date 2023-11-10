@@ -48,14 +48,14 @@
             <label for="floatingInput">Username</label>
           </div>
           <div class="form-floating">
-            <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+            <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password" onkeyup="ajaxConfirmPassword()">
             <label for="floatingPassword">Password</label>
           </div>
           <div class="form-floating">
-            <input type="confirmpassword" class="form-control" id="floatingPassword" name="confirmPassword" placeholder="Confirm Password" onkeyup="confirmPassword2()">
-            <label for="floatingPassword">Confirm Password</label>
+            <input type="confirmpassword" class="form-control" id="floatingConfirmPassword" name="confirmPassword" placeholder="Confirm Password" onkeyup="ajaxConfirmPassword()">
+            <label for="floatingConfirmPassword">Confirm Password</label>
           </div>
-          <div id="confirmPasswordMsg"></div>
+          <div id="ajaxConfirmPasswordMsg"></div>
       
           <button class="btn btn-primary w-100 py-2" id= "buttonSubmit" type="submit">Create account</button>
 

@@ -1,9 +1,9 @@
 <?php
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $password = $_GET['password'];
+    $confirmPassword = $_GET['confirmPassword'];
 
     if ($password == $confirmPassword) {
-        echo "Password and Confirm Password match!";
+        echo "";
     } else {
         echo "Password and Confirm Password do not match!";
     }

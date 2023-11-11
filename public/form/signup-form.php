@@ -1,6 +1,9 @@
 <html>
 <head>
     <?php include_once __DIR__ . '\..\template\head.php' ; ?>
+    <script type="text/javascript" src="..\assets\js\main.js"></script>
+    <script type="text/javascript" src="..\assets\js\signup-onkeyup\fname-ajax.js"></script>
+    <script type="text/javascript" src="..\assets\js\signup-onkeyup\lname-ajax.js"></script>
     <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
     <title>SignUp</title>
     <style>
@@ -36,16 +39,18 @@
         <form>
           <h1 class="h3 mb-3 fw-normal" id="signUp">Sign Up</h1>
           <div class="form-floating">
-            <input type="firstName" class="form-control" id="floatingInput" placeholder="First Name">
-            <label for="floatingInput">First Name</label>
+            <input type="firstName" class="form-control" id="fname" name="fname" placeholder="First Name" onkeyup="ajaxFName()">
+            <label for="fname">First Name</label>
           </div>
+          <div id="ajaxFNameMsg"></div>
           <div class="form-floating">
-            <input type="lastName" class="form-control" id="floatingInput" placeholder="Last Name">
-            <label for="floatingInput">Last Name</label>
+            <input type="lastName" class="form-control" id="lname" name="lname" placeholder="Last Name" onkeyup="ajaxLName()">
+            <label for="lname">Last Name</label>
           </div>
+          <div id="ajaxLNameMsg"></div>
           <div class="form-floating">
-            <input type="username" class="form-control" id="floatingInput" placeholder="username">
-            <label for="floatingInput">Username</label>
+            <input type="username" class="form-control" id="username" name="username" placeholder="username">
+            <label for="username">Username</label>
           </div>
           <div class="form-floating">
             <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password" onkeyup="ajaxConfirmPassword()">

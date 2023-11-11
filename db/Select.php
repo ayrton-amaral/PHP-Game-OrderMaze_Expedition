@@ -17,4 +17,15 @@ function getAllPlayers(){
     return $rows;
 }
 
+function getPlayerByUserName($username){
+    $mysqli = new mysqli(HOST, USER, PASS, DB);
+    $result = $mysqli->query("SELECT * FROM player where username = '$username'");
+    // Associative array
+    $rows = $result->fetch_assoc();
+    // Free result set
+    $result->free_result();
+    $mysqli->close();
+    return $rows;
+}
+
 ?>

@@ -12,8 +12,6 @@ if(isset($_GET['flname'])){
         echo "Must start with a letter a-z or A-Z";
     }
     
- } else {
-    echo "Mandatory field";
  }
 
 

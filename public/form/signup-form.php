@@ -4,6 +4,7 @@
     <script type="text/javascript" src="..\assets\js\main.js"></script>
     <script type="text/javascript" src="..\assets\js\signup-onkeyup\fname-ajax.js"></script>
     <script type="text/javascript" src="..\assets\js\signup-onkeyup\lname-ajax.js"></script>
+    <script type="text/javascript" src="..\assets\js\signup-onkeyup\uname-ajax.js"></script>
     <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode1-ajax.js"></script>
     <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
     <title>SignUp</title>
@@ -50,9 +51,10 @@
           </div>
           <div id="ajaxLNameMsg"></div>
           <div class="form-floating">
-            <input type="username" class="form-control" id="username" name="username" placeholder="username">
+            <input type="username" class="form-control" id="username" name="username" placeholder="username" onkeyup="ajaxUsername()">
             <label for="username">Username</label>
           </div>
+          <div id="ajaxUsernameMsg"></div>
           <div class="form-floating">
             <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password" onkeyup="ajaxPassword()">
             <label for="floatingPassword">Password</label>

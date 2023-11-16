@@ -37,7 +37,7 @@
       </style>
   </head>
   <body>
-      <h1 class="display-3 text-center" id="title">Let's play!</h1>
+      <h1 class="display-3 text-center" id="title">Let's play xx!</h1>
 
       <main class="form-signin w-100 m-auto">
           <form>

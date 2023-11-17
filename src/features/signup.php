@@ -10,6 +10,7 @@
             "password" => array(),
             "confirmPassword" => array(),
         ];
+        $_SESSION['singup-form'] = True;
         $_SESSION['fname'] = $_POST["fname"];
         $_SESSION['lname'] = $_POST["lname"];
         $_SESSION['username'] = $_POST["username"];

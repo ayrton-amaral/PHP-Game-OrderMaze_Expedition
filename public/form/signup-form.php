@@ -1,4 +1,19 @@
-<?php session_start(); ?>
+<?php
+  $fname = "";
+  $lname = "";
+  $username = "";
+  $password = "";
+  $confirmPassword = ""; 
+  session_start(); 
+  if(!empty($_SESSION['singup-form']) && $_SESSION['singup-form'] == true)
+  {
+    $fname = empty($_SESSION['fname']) ? "" :  $_SESSION['fname'];
+    $lname = empty($_SESSION['lname']) ? "" :  $_SESSION['lname'];
+    $username = empty($_SESSION['username']) ? "" :  $_SESSION['username'];
+    $password = empty($_SESSION['password']) ? "" :  $_SESSION['password'];
+    $confirmPassword = empty($_SESSION['fname']) ? "" :  $_SESSION['confirmPassword'];
+  }
+?>
 <html>
 
 <head>
@@ -44,35 +59,35 @@
     <form action=<?= FEATURES . "signup.php" ?> method="post">
       <h1 class="h3 mb-3 fw-normal" id="signUp">Sign Up</h1>
       <div class="form-floating">
-        <input type="firstName" class="form-control" id="fname" name="fname" placeholder="First Name" onkeyup="ajaxFName()" value="<?= empty($_SESSION['fname']) ? "" :  $_SESSION['fname'] ?>">
+        <input type="firstName" class="form-control" id="fname" name="fname" placeholder="First Name" onkeyup="ajaxFName()" value="<?=$fname?>">
         <label for="fname">First Name</label>
       </div>
       <div id="ajaxFNameMsg">
         <?php if (!empty($_SESSION["error_msg"])) { foreach ($_SESSION["error_msg"]["fname"] as $msg) { echo $msg . "<br/>";} } ?>
       </div>
       <div class="form-floating">
-        <input type="lastName" class="form-control" id="lname" name="lname" placeholder="Last Name" onkeyup="ajaxLName()" value="<?= empty($_SESSION['lname']) ? "" :  $_SESSION['lname'] ?>">
+        <input type="lastName" class="form-control" id="lname" name="lname" placeholder="Last Name" onkeyup="ajaxLName()" value="<?=$lname?>">
         <label for="lname">Last Name</label>
       </div>
       <div id="ajaxLNameMsg">
       <?php if (!empty($_SESSION["error_msg"])) { foreach ($_SESSION["error_msg"]["lname"] as $msg) { echo $msg . "<br/>";} } ?>
       </div>
       <div class="form-floating">
-        <input type="username" class="form-control" id="username" name="username" placeholder="username" onkeyup="ajaxUsername()" value="<?= empty($_SESSION['username']) ? "" :  $_SESSION['username'] ?>">
+        <input type="username" class="form-control" id="username" name="username" placeholder="username" onkeyup="ajaxUsername()" value="<?=$username?>">
         <label for="username">Username</label>
       </div>
       <div id="ajaxUsernameMsg">
       <?php if (!empty($_SESSION["error_msg"])) { foreach ($_SESSION["error_msg"]["username"] as $msg) { echo $msg . "<br/>";} } ?>
       </div>
       <div class="form-floating">
-        <input type="password1" class="form-control" id="floatingPassword" name="password" placeholder="Password" onkeyup="ajaxPassword()" value="<?= empty($_SESSION['password']) ? "" :  $_SESSION['password'] ?>">
+        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" onkeyup="ajaxPassword()" value="<?=$password?>">
         <label for="floatingPassword">Password</label>
       </div>
       <div id="ajaxPasswordMsg">
       <?php if (!empty($_SESSION["error_msg"])) { foreach ($_SESSION["error_msg"]["password"] as $msg) { echo $msg . "<br/>";} } ?>
       </div>
       <div class="form-floating">
-        <input type="confirmpassword" class="form-control" id="floatingConfirmPassword" name="confirmPassword" placeholder="Confirm Password" onkeyup="ajaxConfirmPassword()" value="<?= empty($_SESSION['confirmPassword']) ? "" :  $_SESSION['confirmPassword'] ?>">
+        <input type="password" class="form-control" id="floatingConfirmPassword" name="confirmPassword" placeholder="Confirm Password" onkeyup="ajaxConfirmPassword()" value="<?=$confirmPassword?>">
         <label for="floatingConfirmPassword">Confirm Password</label>
       </div>
       <div id="ajaxConfirmPasswordMsg">

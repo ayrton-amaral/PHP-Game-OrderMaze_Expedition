@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
   <head>
   <?php
@@ -40,19 +41,20 @@
       <h1 class="display-3 text-center" id="title">Let's play!</h1>
 
       <main class="form-signin w-100 m-auto">
-          <form>
+          <form action=<?= FEATURES . "signin.php" ?> method="post">
             <h1 class="h3 mb-3 fw-normal" id="signIn">Please sign in</h1>
         
             <div class="form-floating">
-              <input type="username" class="form-control" id="floatingInput" placeholder="Username">
+              <input type="username" class="form-control" id="floatingInput" placeholder="Username" name="username" value="<?= empty($_SESSION['username']) ? "" :  $_SESSION['username'] ?>">
               <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-              <input type="password1" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" value="<?= empty($_SESSION['password']) ? "" :  $_SESSION['password'] ?>">
               <label for="floatingPassword">Password</label>
             </div>
+            <?php if (!empty($_SESSION["singin_error_msg"])) { echo $_SESSION["singin_error_msg"] . "<br/>";} ?>
         
-            <button class="btn btn-primary w-100 py-2" id= "buttonSubmit"type="submit">Sign in</button>
+            <button class="btn btn-primary w-100 py-2" id="buttonSubmit" type="submit"  name="send">Sign in</button>
 
           </form>
           <button class="btn btn-primary w-100 py-2" id= "buttonRegister" onclick="window.location.href = 'signup-form.php';">Register</button>
@@ -64,3 +66,8 @@
 
   </body>
   </html>
+<?php
+  if (!empty($_SESSION["singin_error_msg"])) { unset($_SESSION['singin_error_msg']);}
+  if (!empty($_SESSION["username"])) { unset($_SESSION['username']);}
+  if (!empty($_SESSION["password"])) { unset($_SESSION['password']);}
+?>

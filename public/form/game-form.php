@@ -5,14 +5,16 @@ include_once __DIR__ . '\..\template\head.php';
 ?>
  <title>Game</title>
     <style>
-   .game-form {
+    body {
       background-color: #8F3AC6;
+      height: 100vh;
+    }
+   .game-form {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      margin-top: 10%;
     }
     #buttonSubmit {
       background-color: #F7A52D;
@@ -37,6 +39,7 @@ include_once __DIR__ . '\..\template\head.php';
 </head>
 <body onload="startGame()">
   <?php include_once __DIR__ . '\..\template\nav.php' ; ?>
+
   <div class="game-form">
     <p id="displayRandom"></p>
         <form>

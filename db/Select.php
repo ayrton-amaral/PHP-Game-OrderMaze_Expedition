@@ -38,4 +38,18 @@ function getPassCode($registrationOrder){
     return $rows;
 }
 
+function getHistory(){
+    $mysqli = new mysqli(HOST, USER, PASS, DB);
+    if ($mysqli->connect_errno) {
+        echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+        exit();
+    }
+    $result = $mysqli->query("SELECT * FROM history ORDER BY scoreTime desc;");
+    // Associative array
+    $rows = $result->fetch_assoc();
+    // Free result set
+    $result->free_result();
+    $mysqli->close();
+    return $rows;
+}
 ?>

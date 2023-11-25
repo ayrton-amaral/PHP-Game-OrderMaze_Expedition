@@ -1,7 +1,8 @@
 <?php
 define('DOMAIN','http://localhost');
-define('FEATURES', DOMAIN . '/php-final-project/src/features/');
 define('INDEX', DOMAIN . '/php-final-project/');
+define('FEATURES', INDEX . '/src/features/');
+define('MESSAGE', INDEX . '/public/message/');
 
 
 ?>

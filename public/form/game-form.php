@@ -1,6 +1,7 @@
 <html>
 <head>
 <?php 
+include_once __DIR__ . '\..\template\head.php';
 include_once '../../src/features/signout-timeout.php';
 //session_start();
 if(empty($_SESSION["user"])){
@@ -9,7 +10,7 @@ if(empty($_SESSION["user"])){
 ?>
  <title>Game</title>
     <style>
-   body {
+   .game-form {
       background-color: #8F3AC6;
       display: flex;
       flex-direction: column;
@@ -40,16 +41,19 @@ if(empty($_SESSION["user"])){
     </style>
 </head>
 <body onload="startGame()">
-  <p id="displayRandom"></p>
-      <form>
-        <h1 id="level"></h1>
-        <div class="form-floating">
-          <input type="text">
-        </div>
-        <button id = "buttonSubmit" onclick="checkAnswer(event)" >Submit answer</button>
-      </form>
-  <input id="countDownDate" type="hidden" value=<?=$_SESSION["expire"] *1000; ?>>
-  <p id="demo"></p>
+  <?php include_once __DIR__ . '\..\template\nav.php' ; ?>
+  <div class="game-form">
+    <p id="displayRandom"></p>
+        <form>
+          <h1 id="level"></h1>
+          <div class="form-floating">
+            <input type="text">
+          </div>
+          <button id = "buttonSubmit" onclick="checkAnswer(event)" >Submit answer</button>
+        </form>
+    <input id="countDownDate" type="hidden" value=<?=$_SESSION["expire"] *1000; ?>>
+    <p id="demo"></p>
+  </div>
 </body>
 </html>
 

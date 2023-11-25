@@ -9,7 +9,7 @@ function getAllPlayers(){
     }
     $result = $mysqli->query("SELECT * FROM player");
     // Associative array
-    $rows = $result->fetch_assoc();
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
     // Free result set
     $result->free_result();
     $mysqli->close();
@@ -44,9 +44,9 @@ function getHistory(){
         echo "Failed to connect to MySQL: " . $mysqli->connect_error;
         exit();
     }
-    $result = $mysqli->query("SELECT * FROM history ORDER BY scoreTime desc;");
+    $result = $mysqli->query("SELECT * FROM history ");
     // Associative array
-    $rows = $result->fetch_assoc();
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
     // Free result set
     $result->free_result();
     $mysqli->close();

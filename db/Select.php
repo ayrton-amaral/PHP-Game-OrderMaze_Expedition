@@ -9,7 +9,7 @@ function getAllPlayers(){
     }
     $result = $mysqli->query("SELECT * FROM player");
     // Associative array
-    $rows = $result->fetch_assoc();
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
     // Free result set
     $result->free_result();
     $mysqli->close();
@@ -38,4 +38,18 @@ function getPassCode($registrationOrder){
     return $rows;
 }
 
+function getHistory(){
+    $mysqli = new mysqli(HOST, USER, PASS, DB);
+    if ($mysqli->connect_errno) {
+        echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+        exit();
+    }
+    $result = $mysqli->query("SELECT * FROM history ");
+    // Associative array
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    // Free result set
+    $result->free_result();
+    $mysqli->close();
+    return $rows;
+}
 ?>

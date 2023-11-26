@@ -58,6 +58,11 @@
       background-color: #5775FF;
       border: 0px;
     }
+    #ajaxFNameMsg,#ajaxLNameMsg, #ajaxUsernameMsg, #ajaxPasswordMsg, #ajaxConfirmPasswordMsg {
+      color: #FBBE62;
+    }
+    
+    
   </style>
 </head>
 
@@ -72,7 +77,7 @@
         <label for="fname">First Name</label>
       </div>
       
-      <div id="ajaxFNameMsg" class="text-light fw-bold mx-2">
+      <div id="ajaxFNameMsg" class="fw-bold mx-2">
           <?php echo feedbackMessages("fname") ?>
       </div>
       
@@ -81,7 +86,7 @@
         <label for="lname">Last Name</label>
       </div>
       
-      <div id="ajaxLNameMsg" class="text-light fw-bold mx-2">
+      <div id="ajaxLNameMsg" class="fw-bold mx-2">
       <?php echo feedbackMessages("lname") ?>
       </div>
       
@@ -90,7 +95,7 @@
         <label for="username">Username</label>
       </div>
       
-      <div id="ajaxUsernameMsg" class="text-light fw-bold mx-2">
+      <div id="ajaxUsernameMsg" class="fw-bold mx-2">
       <?php echo feedbackMessages("username") ?>
       </div>
       
@@ -99,7 +104,7 @@
         <label for="floatingPassword">Password</label>
       </div>
       
-      <div id="ajaxPasswordMsg" class="text-light fw-bold mx-2">
+      <div id="ajaxPasswordMsg" class="fw-bold mx-2">
       <?php echo feedbackMessages("password") ?>
       </div>
       
@@ -108,7 +113,7 @@
         <label for="floatingConfirmPassword">Confirm Password</label>
       </div>
       
-      <div id="ajaxConfirmPasswordMsg" class="text-light fw-bold mx-2">
+      <div id="ajaxConfirmPasswordMsg" class="fw-bold mx-2">
       <?php echo feedbackMessages("confirmPassword") ?>
       </div>
 

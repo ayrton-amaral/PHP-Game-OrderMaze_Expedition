@@ -44,6 +44,7 @@
       $currentLives = $_SESSION['lives'];
       $generatedSequence = $_SESSION['generatedSequence'];
       $gameInstruction = $_SESSION['gameInstruction'];
+      $gameMessage = empty($_SESSION['gameMessage']) ? "" : $_SESSION['gameMessage'];
     
   ?>
 
@@ -64,22 +65,22 @@
             ?>
             <div class="row justify-content-center ">
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l1" id="l1" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l2" id="l2" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l3" id="l3" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l4" id="l4" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l5" id="l5" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg" name="l6" id="l6" maxlength="3">
               </div>
             </div>
             <?php  
@@ -89,10 +90,10 @@
             ?>
             <div class="row justify-content-center ">
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg"  name="l1" id="l1" maxlength="3">
               </div>
               <div class="col-1">
-                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+                <input type="text" class="form-control form-control-lg"  name="l2" id="l2" maxlength="3">
               </div>
             </div>
             <?php  
@@ -101,13 +102,14 @@
                 
             ?>
       </div>
+      <p><?=$gameMessage ?></p>
       <div class="container text-center">
         <div class="row justify-content-center">
           <div class="col-2">
-            <button id="buttonSubmit" onclick="checkAnswer(event)">Submit answer</button>
+            <button id="buttonSubmit" type="submit" name="send">Submit answer</button>
           </div>
           <div class="col-2">
-            <button id="buttonCancel" onclick="checkAnswer(event)">Cancel</button>
+            <button id="buttonCancel" >Cancel</button>
           </div>
       </div>
     </form>

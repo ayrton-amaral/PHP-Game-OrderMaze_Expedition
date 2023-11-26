@@ -17,4 +17,17 @@ function createPlayer($fname, $lname, $userName, $password) {
 
 }
 
+
+function createScore($result , $livesUsed, $registrationOrder) {
+
+    $mysqli = new mysqli(HOST, USER, PASS, DB);
+    if ($mysqli->connect_errno) {
+        echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+        exit();
+    }
+    $sqlCreateScore = "INSERT INTO score (scoreTime, result , livesUsed, registrationOrder) VALUES (now(), '$result' , $livesUsed, $registrationOrder);";
+    $mysqli->query($sqlCreateScore);
+    $mysqli->close();
+
+}
 ?>

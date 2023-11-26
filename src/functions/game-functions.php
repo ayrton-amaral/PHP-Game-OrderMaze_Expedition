@@ -35,7 +35,7 @@ function generateRandomNumbers() {
 
 // Function to check if two arrays are equal
 function arraysEqual($arr1, $arr2) {
-    return count($arr1) === count($arr2) && array_values($arr1) === array_values($arr2);
+    return count($arr1) == count($arr2) && array_values($arr1) == array_values($arr2);
 }
 
 // generate sequence of numbers or letters according to the level

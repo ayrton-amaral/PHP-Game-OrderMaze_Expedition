@@ -8,9 +8,9 @@ if(empty($_SESSION["user"])){
 }
 ?>
 <!-- #F7A52D  5775FF-->
-<nav class="navbar navbar-expand-lg" style="background-color: #F7A52D;" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg" style="background-color: #5775FF;" data-bs-theme="dark">
     <div class="container">
-        <a class="navbar-brand" href="<?= INDEX ?>">Kids Games</a>
+        <a class="navbar-brand" style="color: white;" href="<?= INDEX ?>">Kids Games</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

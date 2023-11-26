@@ -6,5 +6,6 @@ if (empty($_SESSION["user"])){
 }
 else {
     //Redirect to the appropriate game form level
-    header('Location: public/form/game-form.php');
+    //header('Location: public/form/game-form.php');
+    header("Location: /php-final-project/src/features/game.php");
 }

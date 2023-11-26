@@ -28,7 +28,8 @@ if(isset($_POST["send"])){
                     $_SESSION['start'] = time(); 
                     //900 = 15 minutes 
                     $_SESSION['expire'] = $_SESSION['start'] + (900) ;
-                    header("Location: /php-final-project/public/form/game-form.php");
+                    header("Location: /php-final-project/src/features/game.php");
+                    //header("Location: /php-final-project/public/form/game-form.php");
                     exit();
                 }
             }

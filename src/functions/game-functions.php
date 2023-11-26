@@ -14,11 +14,9 @@ function generateRandomLetters() {
             $randomLetters[] = $randomLetter;
         }
     }
-
+    
     return $randomLetters;
 }
-
-
 
 //generate unique random numbers
 function generateRandomNumbers() {
@@ -35,22 +33,9 @@ function generateRandomNumbers() {
     return $randomNumbers;
 }
 
-
-/*
-//another way to generate random letters
-function generateRandomLetters() {
-    $randomLetters = [];
-
-    while (count($randomLetters) < 6) {
-        $randomLetter = chr(rand(65, 90)); // ASCII values for uppercase letters
-
-        if (!in_array($randomLetter, $randomLetters)) {
-            $randomLetters[] = $randomLetter;
-        }
-    }
-
-    return $randomLetters;
+// Function to check if two arrays are equal
+function arraysEqual($arr1, $arr2) {
+    return count($arr1) === count($arr2) && array_values($arr1) === array_values($arr2);
 }
 
-*/
 ?>

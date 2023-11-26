@@ -2,6 +2,8 @@
 <head>
 <?php 
 include_once __DIR__ . '\..\template\head.php';
+
+
 ?>
  <title>Game</title>
     <style>
@@ -37,12 +39,24 @@ include_once __DIR__ . '\..\template\head.php';
     }
     </style>
 </head>
-<body onload="startGame()">
-  <?php include_once __DIR__ . '\..\template\nav.php' ; ?>
+<body >
+  <?php include_once __DIR__ . '\..\template\nav.php' ; 
+    //session_start();
+    $currentLevel = $_SESSION['level'];
+    $currentLives = $_SESSION['lives'];
+    $correctGenerated = $_SESSION['generatedSequence'];
+  
+  ?>
 
-  <div class="game-form">
-    <p id="displayRandom"></p>
-        <form>
+<input type="hidden" value="<?=$currentLevel ?>" id="currentLevel"/>
+
+  <div class="game-form" onload="startGame()">
+    <p id="displayRandom"><?php 
+      foreach ($correctGenerated as $x) {
+        echo $x . " - ";
+      }
+    ?></p>
+        <form action=<?= FEATURES . "game.php" ?> method="post">
           <h1 id="level"></h1>
           <div class="form-floating">
             <input type="text">
@@ -52,6 +66,88 @@ include_once __DIR__ . '\..\template\head.php';
   </div>
 </body>
 </html>
+
+<script>
+
+  var currentLevel = 1;
+  var correctGenerated = [];
+  var userAnswer = [];
+
+  function startGame() {
+    currentLevel = document.getElementById("currentLevel").value;
+    //correctGenerated = document.getElementById("correctGenerated").value;
+
+    if (currentLevel === 1) {
+      setupForm("Order 6 letters in ascending order");
+    } else if (currentLevel === 2) {
+      setupForm("Order 6 letters in descending order");
+    } else if (currentLevel === 3) {
+      setupForm("Order 6 numbers in ascending order");
+    } else if (currentLevel === 4) {
+      setupForm("Order 6 numbers in descending order");
+    } else if (currentLevel === 5) {
+      setupForm("Identify the first (smallest) and last letter (largest)");
+    } else if (currentLevel === 6) {
+      setupForm("Identify the smallest and largest number");
+    }
+    //displayRandom();
+    showInputFields();
+  }
+  // change the statement of the question each level
+  function setupForm(title) {
+        document.getElementById("level").textContent = title;
+  }
+
+  //show input fields according to the level
+  function showInputFields() {
+        const inputFields = document.querySelector(".form-floating");
+        inputFields.innerHTML = '';
+
+        if (currentLevel === 5 || currentLevel === 6) {
+            for (let i = 0; i < 2; i++) {
+                const input = document.createElement("input");
+                input.type = "text";
+                input.classList.add("input-field");
+                inputFields.appendChild(input);
+            }
+        } else {
+            for (let i = 0; i < 6; i++) {
+                const input = document.createElement("input");
+                input.type = "text";
+                input.classList.add("input-field");
+                inputFields.appendChild(input);
+            }
+        }
+  }
+
+
+  //display random numbers or letters
+  function displayRandom() {
+        const displayElement = document.getElementById("displayRandom");
+        displayElement.textContent = correctGenerated.join(' ');
+  }
+  
+  //check the answers received from user
+  function checkAnswer() {
+    event.preventDefault();
+    const inputFields = document.querySelectorAll(".input-field");
+    userSequence = Array.from(inputFields).map(input => input.value);
+
+    //const elementType = typeof correctGenerated[0];
+
+    //if (elementType === 'number') {
+    //// convert user input to numbers to compare with the random array of numbers
+    //userSequence = userSequence.map(value => Number(value));
+    //}
+
+    <?php $_SESSION['userAnswer'] ?> = userSequence;
+
+}
+
+</script>
+
+<?php
+/*
 
 <script>
 
@@ -197,3 +293,5 @@ function arraysEqual(arr1, arr2) {
         return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
 }
 </script>
+*/
+?>

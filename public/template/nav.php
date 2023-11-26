@@ -7,8 +7,9 @@ if(empty($_SESSION["user"])){
     $_SESSION['expire'] = $_SESSION['start'] + (900) ;//900 = 15 minutes 
 }
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+<!-- #F7A52D  5775FF-->
+<nav class="navbar navbar-expand-lg" style="background-color: #F7A52D;" data-bs-theme="dark">
+    <div class="container">
         <a class="navbar-brand" href="<?= INDEX ?>">Kids Games</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,13 +19,10 @@ if(empty($_SESSION["user"])){
                 <li class="nav-item">
                     <a class="nav-link" href="<?= MESSAGE . 'history-table.php' ?>">History</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
             </ul>
-            <span class="navbar-text mx-2" id="showCountDownDate"></span>
+            <span class="navbar-text mx-4" id="showCountDownDate"></span>
             <form class="d-flex my-2 my-lg-0" role="search" action="<?=FEATURES . 'signout.php'?>" method="get">
-                <button class="btn btn-sm btn-outline-secondary" type="submit">Sign Out</button>
+                <button class="btn btn-sm btn-light" type="submit">Sign Out</button>
             </form>
         </div>
     </div>

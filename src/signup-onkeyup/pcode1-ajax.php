@@ -1,6 +1,6 @@
 <?php
-    if(isset($_GET['password'])){
-        $password = $_GET['password'];
+    if(isset($_GET['text'])){
+        $password = $_GET['text'];
 
         if (strlen($password) < 8) {
             echo "Password must contain at least 8 characters.";

@@ -6,7 +6,7 @@ include_once __DIR__ . '\..\template\head.php';
  <title>Game</title>
     <style>
     body {
-      background-color: #8F3AC6;
+      background-color: #F7A52D;
       height: 100vh;
     }
    .game-form {
@@ -17,7 +17,7 @@ include_once __DIR__ . '\..\template\head.php';
       margin-top: 10%;
     }
     #buttonSubmit {
-      background-color: #F7A52D;
+      background-color: #5775FF;
       color: white;
       margin-top: 24px;
       border: 0px;
@@ -34,6 +34,13 @@ include_once __DIR__ . '\..\template\head.php';
     #displayRandom {
       font-size: 42px;
       text-align: center;
+    }
+    #level{
+      color: black;
+    }
+    #displayRandom{
+      color: white;
+      font-weight:bold;
     }
     </style>
 </head>

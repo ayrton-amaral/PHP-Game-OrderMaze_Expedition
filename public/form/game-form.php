@@ -1,12 +1,11 @@
 <html>
+
 <head>
-<?php 
-include_once __DIR__ . '\..\template\head.php';
-
-
-?>
- <title>Game</title>
-    <style>
+  <?php
+  include_once __DIR__ . '\..\template\head.php';
+  ?>
+  <title>Game</title>
+  <style>
     body {
       background-color: #F7A52D;
       height: 100vh;
@@ -18,7 +17,7 @@ include_once __DIR__ . '\..\template\head.php';
       justify-content: center;
       margin-top: 10%;
     }
-    #buttonSubmit {
+    #buttonSubmit,#buttonCancel {
       background-color: #5775FF;
       color: white;
       margin-top: 24px;
@@ -30,275 +29,89 @@ include_once __DIR__ . '\..\template\head.php';
       margin-right: auto;
       display: block;
     }
-    .form-floating {
-      padding: 5px;
-    }
-    #displayRandom {
-      font-size: 42px;
-      text-align: center;
-    }
     #level{
       color: black;
     }
-    #displayRandom{
-      color: white;
-      font-weight:bold;
-    }
+
+
+
     </style>
 </head>
+
 <body >
-  <?php include_once __DIR__ . '\..\template\nav.php' ; 
-    //session_start();
-    $currentLevel = $_SESSION['level'];
-    $currentLives = $_SESSION['lives'];
-    $correctGenerated = $_SESSION['generatedSequence'];
-  
+  <?php include_once __DIR__ . '\..\template\nav.php'; 
+      $currentLevel = $_SESSION['level'];
+      $currentLives = $_SESSION['lives'];
+      $generatedSequence = $_SESSION['generatedSequence'];
+      $gameInstruction = $_SESSION['gameInstruction'];
+    
   ?>
 
-<input type="hidden" value="<?=$currentLevel ?>" id="currentLevel"/>
+  <div class="container" style="margin-top: 10%;">
+    <form action=<?= FEATURES . "game.php" ?> method="post">
+      <div class="container text-center">
+        <h1 id="level" >Level <?=$currentLevel ?></h1>  
+      
+        <h2 id="gameInstruction"><?=$gameInstruction ?></h1>
+        <h2 id="sequence"><?php 
+          foreach ($generatedSequence as $digit) {
+            echo $digit . "  ";
+          }
+          ?></h1>
+            <?php  
+              if ($currentLevel == 1 || $currentLevel == 2 ||$currentLevel == 3 ||$currentLevel == 4 ){
 
-  <div class="game-form" onload="startGame()">
-    <p id="displayRandom"><?php 
-      foreach ($correctGenerated as $x) {
-        echo $x . " - ";
-      }
-    ?></p>
-        <form action=<?= FEATURES . "game.php" ?> method="post">
-          <h1 id="level"></h1>
-          <div class="form-floating">
-            <input type="text">
+            ?>
+            <div class="row justify-content-center ">
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+            </div>
+            <?php  
+              }
+              elseif ($currentLevel == 5 || $currentLevel == 6 ){
+                
+            ?>
+            <div class="row justify-content-center ">
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+              <div class="col-1">
+                <input type="text" class="form-control form-control-lg" id="l1" maxlength="1">
+              </div>
+            </div>
+            <?php  
+              }
+              
+                
+            ?>
+      </div>
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-2">
+            <button id="buttonSubmit" onclick="checkAnswer(event)">Submit answer</button>
           </div>
-          <button id = "buttonSubmit" onclick="checkAnswer(event)" >Submit answer</button>
-        </form>
+          <div class="col-2">
+            <button id="buttonCancel" onclick="checkAnswer(event)">Cancel</button>
+          </div>
+      </div>
+    </form>
   </div>
 </body>
+
 </html>
-
-<script>
-
-  var currentLevel = 1;
-  var correctGenerated = [];
-  var userAnswer = [];
-
-  function startGame() {
-    currentLevel = document.getElementById("currentLevel").value;
-    //correctGenerated = document.getElementById("correctGenerated").value;
-
-    if (currentLevel === 1) {
-      setupForm("Order 6 letters in ascending order");
-    } else if (currentLevel === 2) {
-      setupForm("Order 6 letters in descending order");
-    } else if (currentLevel === 3) {
-      setupForm("Order 6 numbers in ascending order");
-    } else if (currentLevel === 4) {
-      setupForm("Order 6 numbers in descending order");
-    } else if (currentLevel === 5) {
-      setupForm("Identify the first (smallest) and last letter (largest)");
-    } else if (currentLevel === 6) {
-      setupForm("Identify the smallest and largest number");
-    }
-    //displayRandom();
-    showInputFields();
-  }
-  // change the statement of the question each level
-  function setupForm(title) {
-        document.getElementById("level").textContent = title;
-  }
-
-  //show input fields according to the level
-  function showInputFields() {
-        const inputFields = document.querySelector(".form-floating");
-        inputFields.innerHTML = '';
-
-        if (currentLevel === 5 || currentLevel === 6) {
-            for (let i = 0; i < 2; i++) {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.classList.add("input-field");
-                inputFields.appendChild(input);
-            }
-        } else {
-            for (let i = 0; i < 6; i++) {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.classList.add("input-field");
-                inputFields.appendChild(input);
-            }
-        }
-  }
-
-
-  //display random numbers or letters
-  function displayRandom() {
-        const displayElement = document.getElementById("displayRandom");
-        displayElement.textContent = correctGenerated.join(' ');
-  }
-  
-  //check the answers received from user
-  function checkAnswer() {
-    event.preventDefault();
-    const inputFields = document.querySelectorAll(".input-field");
-    userSequence = Array.from(inputFields).map(input => input.value);
-
-    //const elementType = typeof correctGenerated[0];
-
-    //if (elementType === 'number') {
-    //// convert user input to numbers to compare with the random array of numbers
-    //userSequence = userSequence.map(value => Number(value));
-    //}
-
-    <?php $_SESSION['userAnswer'] ?> = userSequence;
-
-}
-
-</script>
-
-<?php
-/*
-
-<script>
-
-  let currentLevel = 1;
-  let correctGenerated = [];
-  let userAnswer = [];
-
-  function startGame() {
-    if (currentLevel === 1) {
-      correctGenerated = generateRandomLetters(6);
-      setupForm("Order 6 letters in ascending order");
-    } else if (currentLevel === 2) {
-      correctGenerated = generateRandomLetters(6)
-      setupForm("Order 6 letters in descending order");
-    } else if (currentLevel === 3) {
-      correctGenerated = generateRandomNumbers(6);
-      setupForm("Order 6 numbers in ascending order");
-    } else if (currentLevel === 4) {
-      correctGenerated = generateRandomNumbers(6)
-      setupForm("Order 6 numbers in descending order");
-    } else if (currentLevel === 5) {
-      correctGenerated = generateRandomLetters(6);
-      setupForm("Identify the first (smallest) and last letter (largest)");
-    } else if (currentLevel === 6) {
-      correctGenerated = generateRandomNumbers(6);
-      setupForm("Identify the smallest and largest number");
-    }
-    displayRandom();
-    showInputFields();
-  }
-  // change the statement of the question each level
-  function setupForm(title) {
-        document.getElementById("level").textContent = title;
-  }
-
-  //show input fields according to the level
-  function showInputFields() {
-        const inputFields = document.querySelector(".form-floating");
-        inputFields.innerHTML = '';
-
-        if (currentLevel === 5 || currentLevel === 6) {
-            for (let i = 0; i < 2; i++) {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.classList.add("input-field");
-                inputFields.appendChild(input);
-            }
-        } else {
-            for (let i = 0; i < 6; i++) {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.classList.add("input-field");
-                inputFields.appendChild(input);
-            }
-        }
-  }
-
-  function generateRandomNumbers(length) {
-    let sequence = [];
-    while (sequence.length < length) {
-      // random numbers from 0 to 100
-        const randomNumber = Math.floor(Math.random() * 101); 
-        // check if the random number already exists
-        if (!sequence.includes(randomNumber)) {
-            sequence.push(randomNumber);
-        }
-    }
-    return sequence;
-  }
-
-  function generateRandomLetters(length) {
-    // random will decide if it will have uppercase or lowercase
-    const useUppercase = Math.round(Math.random()) === 0;
-    // if 1 will give uppercase, if 0 lowercase
-    const characters = useUppercase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : 'abcdefghijklmnopqrstuvwxyz';
-    
-    let sequence = [];
-    while (sequence.length < length) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        const randomChar = characters[randomIndex];
-        // check if the random letter already exists
-        if (!sequence.includes(randomChar)) {
-            sequence.push(randomChar);
-        }
-    }
-    return sequence;
-  }
-  //display random numbers or letters
-  function displayRandom() {
-        const displayElement = document.getElementById("displayRandom");
-        displayElement.textContent = correctGenerated.join(' ');
-  }
-  
-  //check the answers received from user
-  function checkAnswer() {
-    event.preventDefault();
-    const inputFields = document.querySelectorAll(".input-field");
-    userSequence = Array.from(inputFields).map(input => input.value);
-
-    if (currentLevel === 1) {
-       // ascending order
-       correctGenerated.sort();
-    } else if (currentLevel === 2) {
-      //descending order
-      correctGenerated.sort().reverse();
-    }else if (currentLevel === 3) {
-    // ascending order for numbers
-    correctGenerated = correctGenerated.sort((a, b) => a - b);
-    } else if (currentLevel === 4) {
-    // descending order for numbers
-    correctGenerated = correctGenerated.sort((a, b) => b - a);
-    } else if (currentLevel === 5) {
-      // sorting and getting the first and last letter of the array
-      correctGenerated = correctGenerated.sort();
-      correctGenerated = [correctGenerated[0], correctGenerated[correctGenerated.length - 1]];
-
-    } else if (currentLevel === 6) {
-      correctGenerated = [Math.min(...correctGenerated), Math.max(...correctGenerated)];
-    }
-
-    const elementType = typeof correctGenerated[0];
-
-    if (elementType === 'number') {
-    // convert user input to numbers to compare with the random array of numbers
-    userSequence = userSequence.map(value => Number(value));
-    }
-
-    if (arraysEqual(correctGenerated, userSequence)) {
-      currentLevel++;
-      alert("Correct!");
-      if (currentLevel <= 6) {
-        startGame();
-      } else {
-        alert("You completed all levels! Game Over.");
-      }
-    }
-    else {
-      alert("Incorrect! Game Over.");
-    }
-}
-//compare the array received from user with the correct answer
-function arraysEqual(arr1, arr2) {
-        return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
-}
-</script>
-*/
-?>

@@ -33,6 +33,7 @@ if(isset($_POST["send"])){
             //startGame();
             $_SESSION['level'] = $currentLevel;
             $_SESSION['generatedSequence'] = generateSequence($currentLevel);
+            $_SESSION['gameInstruction'] = generateMessage($currentLevel);
             header("Location: /php-final-project/public/form/game-form.php");
             exit();
         } else {
@@ -50,6 +51,7 @@ if(isset($_POST["send"])){
             $_SESSION['level'] = $currentLevel;
             $_SESSION['generatedSequence'] = generateSequence($currentLevel);
             $_SESSION['lives'] = $currentLives;
+            $_SESSION['gameInstruction'] = generateMessage($currentLevel);
             header("Location: /php-final-project/public/form/game-form.php");
             exit();
         } else {
@@ -69,6 +71,7 @@ else {
     $_SESSION['level'] = $currentLevel;
     $_SESSION['generatedSequence'] = generateSequence($currentLevel);
     $_SESSION['lives'] = $currentLives;
+    $_SESSION['gameInstruction'] = generateMessage($currentLevel);
 
     header("Location: /php-final-project/public/form/game-form.php");
     exit();
@@ -76,17 +79,6 @@ else {
 }
 
 
-function generateSequence($currentLevel) {
-    //global $currentLevel, $generatedSequence;
-
-    if ($currentLevel === 1 || $currentLevel === 2 || $currentLevel === 5) {
-        $generatedSequence = generateRandomLetters();
-    } elseif ($currentLevel === 3 || $currentLevel === 4 || $currentLevel === 6) {
-        $generatedSequence = generateRandomNumbers();
-    }
-
-    return $generatedSequence;
-}
 
 
 ?>

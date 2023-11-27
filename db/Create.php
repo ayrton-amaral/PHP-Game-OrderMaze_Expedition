@@ -76,13 +76,13 @@ $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES('$2y$10$FRAyAIK6.TYEEmbOHF4JfeiBCdWFHcqRTILM7nF/7CPjE3dNEWj3W', 3);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'réussite', 4, 1);
+                VALUES(NOW(), 'success', 4, 1);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'échec', 6, 2);
+                VALUES(NOW(), 'failure', 6, 2);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'incomplet', 5, 3);";
+                VALUES(NOW(), 'incomplete', 5, 3);";
 
 if ($conn->multi_query($sql_insert)) {
     echo "Initial data inserted successfully.\n";

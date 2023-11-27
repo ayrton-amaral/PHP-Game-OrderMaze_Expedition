@@ -1,3 +1,11 @@
 <?php 
-echo "Canceld";
+include_once __DIR__ . '\..\..\db\Insert.php';
+    session_start(); 
+    if(!empty($_SESSION['user']))
+    {
+        createScore("incomplete", $_SESSION['lives'], $_SESSION['user']['registrationOrder']);
+        header("Location: /php-final-project/src/features/game.php");
+        exit();
+    }
+
 ?>

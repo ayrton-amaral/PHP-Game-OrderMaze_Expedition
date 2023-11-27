@@ -17,7 +17,7 @@
       justify-content: center;
       margin-top: 10%;
     }
-    #buttonSubmit,#buttonCancel {
+    .buttonSubmit,.buttonCancel {
       background-color: #5775FF;
       color: white;
       margin-top: 24px;
@@ -59,7 +59,7 @@
 
   <p id="message"><?=$gameMessage ?></p>
   <div class="container" style="margin-top: 10%;">
-    <form action=<?= FEATURES . "game.php" ?> method="post">
+    <form id="game" action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
         <h1 id="level" >Level <?=$currentLevel ?></h1>  
       
@@ -112,18 +112,20 @@
                 
             ?>
       </div>
-      
       <div class="container text-center">
         <div class="row justify-content-center">
           <div class="col-2">
-            <button id="buttonSubmit" type="submit" name="send">Submit answer</button>
+            <button id="game" class="buttonSubmit" type="submit" name="send">Submit answer</button>
           </div>
           <div class="col-2">
-            <button id="buttonCancel" >Cancel</button>
+            <form id="cancel" method="get">
+              <button id="cancel" class="buttonCancel" type="submit" name="cancel" formaction="<?= FEATURES . "cancel.php" ?>">Cancel</button>
+            </form>
           </div>
       </div>
+    </div>
+      
     </form>
-  </div>
 </body>
 
 </html>

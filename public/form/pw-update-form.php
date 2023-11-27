@@ -73,7 +73,7 @@ function feedbackMessages($inputId){
       </main>
 
   <script type="text/javascript" src="..\assets\js\main.js"></script>
-  <script type="text/javascript" src="..\assets\js\signup-onkeyup\uname-ajax.js"></script>
+  <script type="text/javascript" src="..\assets\js\signup-onkeyup\uname-pw-ajax.js"></script>
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode1-ajax.js"></script>
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
 </body>

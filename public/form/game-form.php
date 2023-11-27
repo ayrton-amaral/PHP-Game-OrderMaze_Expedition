@@ -90,22 +90,22 @@
 
             ?>
             <div class="row justify-content-center ">
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l1" id="l1" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l2" id="l2" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l3" id="l3" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l4" id="l4" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l5" id="l5" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg" name="l6" id="l6" maxlength="3">
               </div>
             </div>
@@ -115,10 +115,10 @@
                 
             ?>
             <div class="row justify-content-center ">
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg"  name="l1" id="l1" maxlength="3">
               </div>
-              <div class="col-1">
+              <div class="col-md-1 col-sm-2">
                 <input type="text" class="form-control form-control-lg"  name="l2" id="l2" maxlength="3">
               </div>
             </div>
@@ -130,10 +130,10 @@
       </div>
       <div class="container text-center">
         <div class="row justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2 col-sm-10">
             <button id="game" class="buttonSubmit" type="submit" name="send">Submit answer</button>
           </div>
-          <div class="col-2">
+          <div class="col-md-2 col-sm-10">
             <form id="cancel" method="get">
               <button id="cancel" class="buttonCancel" type="submit" name="cancel" formaction="<?= FEATURES . "cancel.php" ?>">Cancel</button>
             </form>

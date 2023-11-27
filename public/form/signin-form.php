@@ -52,7 +52,10 @@
               <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" value="<?= empty($_SESSION['password']) ? "" :  $_SESSION['password'] ?>">
               <label for="floatingPassword">Password</label>
             </div>
-            <?php if (!empty($_SESSION["singin_error_msg"])) { echo $_SESSION["singin_error_msg"] . "<br/>";} ?>
+            <div class="fw-bold mx-2" style="color: #FBBE62">
+              <?php if (!empty($_SESSION["singin_error_msg"])) { echo $_SESSION["singin_error_msg"] . "<br/>";} ?>
+            </div>
+            
         
             <button class="btn btn-primary w-100 py-2" id="buttonSubmit" type="submit"  name="send">Sign in</button>
 

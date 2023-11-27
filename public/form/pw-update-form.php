@@ -1,6 +1,12 @@
 <html>
 <head>
-<?php include_once __DIR__ . '\..\template\head.php' ; ?>
+<?php 
+include_once __DIR__ . '\..\template\head.php' ;
+session_start(); 
+function feedbackMessages($inputId){
+  return empty($_SESSION["error_msg_pw"]) ? "" : $_SESSION["error_msg_pw"][$inputId];
+}
+?>
 
     <title>Change password</title>
     <style>
@@ -30,28 +36,45 @@
 <body>
 
     <main class="form-signin w-100 m-auto">
-        <form>
+        <form action=<?= FEATURES . "pw-update.php" ?> method="post">
           <h1 class="h3 mb-3 fw-normal" id="changePassword">Change Password</h1>
           <div class="form-floating">
-            <input type="username" class="form-control" id="floatingInput" placeholder="username">
+            <input type="text" class="form-control" id="username" name="username" placeholder="username">
             <label for="floatingInput">Username</label>
           </div>
+
+          <div id="ajaxUsernameMsg" class="fw-bold mx-2 ajaxValidationMsg">
+            <?php echo feedbackMessages("username") ?>
+          </div>
+
           <div class="form-floating">
-            <input type="password1" class="form-control" id="floatingPassword" placeholder="New Password">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="New Password">
             <label for="floatingPassword">New Password</label>
           </div>
+
+          <div id="ajaxPasswordMsg" class="fw-bold mx-2 ajaxValidationMsg">
+            <?php echo feedbackMessages("password") ?>
+          </div>
+
           <div class="form-floating">
-            <input type="confirmpassword" class="form-control" id="floatingPassword" placeholder="Confirm Password">
+            <input type="password" class="form-control" id="floatingConfirmPassword" name="confirmPassword" placeholder="Confirm Password">
             <label for="floatingPassword">Confirm Password</label>
           </div>
       
-          <button class="btn btn-primary w-100 py-2" id= "buttonSubmit" type="submit">Edit</button>
+          <div id="ajaxConfirmPasswordMsg" class="fw-bold mx-2 ajaxValidationMsg">
+            <?php echo feedbackMessages("confirmPassword") ?>
+          </div>
+
+          <button class="btn btn-primary w-100 py-2" id= "buttonSubmit" type="submit" name="send">Edit</button>
 
         </form>
-        <button class="btn btn-primary w-100 py-2" onclick="window.location.href = 'signin-form.php';" id= "btnLogin">Login</button>
+        <button class="btn btn-primary w-100 py-2" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
 
       </main>
 
-
+  <script type="text/javascript" src="..\assets\js\main.js"></script>
+  <script type="text/javascript" src="..\assets\js\signup-onkeyup\uname-ajax.js"></script>
+  <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode1-ajax.js"></script>
+  <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
 </body>
 </html>

@@ -11,3 +11,7 @@ body {
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
+
+.ajaxValidationMsg {
+  color: #FBBE62;
+}

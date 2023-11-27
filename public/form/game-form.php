@@ -15,12 +15,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-top: 10%;
     }
-    .buttonSubmit,.buttonCancel {
+    .buttonSubmit{
       background-color: #5775FF;
       color: white;
-      margin-top: 24px;
+      margin-top: 26px;
       border: 0px;
       padding: 12px;
       font-size: 18px; 
@@ -28,20 +27,26 @@
       margin-left: auto;
       margin-right: auto;
       display: block;
+
     }
     #level{
       color: black;
     }
-    #message {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 3%;
-      font-size: 24px; 
-      font-weight: bold;
-      color: #8F3AC6;
+    .buttonCancel {
+      background-color: #5775FF;
+      color: white;
+      margin-top: 24px;
+      border: 0px;
+      padding: 12px;
+      font-size: 18px; 
+      border-radius: 5px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin-right: 80px;
+      margin-bottom: 20px;
     }
+   
 
 
     </style>
@@ -86,7 +91,7 @@
     <form id="game" action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
         <h1 id="level" >Level <?=$currentLevel ?></h1>  
-        <h2 id="gameInstruction"><?=$gameInstruction ?></h1>
+        <h2 id="gameInstruction" style = "margin-bottom:3%;"><?=$gameInstruction ?></h1>
         <h2 id="sequence"><?php foreach ($generatedSequence as $digit) { echo $digit . "  ";}?></h2>
             <?php  
               if ($currentLevel == 1 || $currentLevel == 2 ||$currentLevel == 3 ||$currentLevel == 4 ){
@@ -131,18 +136,19 @@
                 
             ?>
       </div>
-      <div class="container text-center">
+      
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-10">
             <button id="game" class="buttonSubmit" type="submit" name="send">Submit answer</button>
           </div>
+        </div>
           <div class="col-md-2 col-sm-10">
             <form id="cancel" method="get">
               <button id="cancel" class="buttonCancel" type="submit" name="cancel" formaction="<?= FEATURES . "cancel.php" ?>">Cancel</button>
             </form>
           </div>
-      </div>
-    </div>
+   
+   
       
     </form>
     <script>

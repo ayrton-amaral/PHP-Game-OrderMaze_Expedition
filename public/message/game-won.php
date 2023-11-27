@@ -4,7 +4,6 @@
 <?php include_once __DIR__ . '\..\template\head.php' ; ?>
 
 <title>History</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body {
         background-color: #F7A52D;
@@ -44,11 +43,11 @@
         </div>
     </div>
     <div class ="stars-container">
-        <i id = "stars" class="bi bi-star"></i>
-        <i id = "stars" class="bi bi-star"></i>
-        <i id = "stars" class="bi bi-star"></i>
-        <i id = "stars" class="bi bi-star"></i>
-        <i id = "stars" class="bi bi-star"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
     </div>
 
 

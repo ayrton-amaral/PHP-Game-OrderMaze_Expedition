@@ -6,12 +6,16 @@
 <title>History</title>
 <style>
     body {
-        background-color: #8F3AC6;
+        background-color: #F7A52D;
     }
     
     .title {
-        color: white;
-        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #E5E5E5;
+        font-size: 42px;
+        padding-top: 25%;
     }
     
     </style>

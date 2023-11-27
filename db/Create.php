@@ -1,17 +1,14 @@
 <?php
 
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$database = "kidsgames";
+include_once 'Database.php';
 
-$conn = new mysqli($hostname, $username, $password);
+$conn = new mysqli(HOST, USER, PASS);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "CREATE DATABASE IF NOT EXISTS $database";
+$sql = "CREATE DATABASE IF NOT EXISTS " . DB;
 
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully\n";
@@ -20,7 +17,7 @@ else {
     echo "Error creating database: " . $conn->error;
 }
 
-$conn->select_db($database);
+$conn->select_db(DB);
 
 $sql_code = "CREATE TABLE IF NOT EXISTS player (
         fName VARCHAR(50) NOT NULL,
@@ -57,6 +54,9 @@ if ($conn->multi_query($sql_code)) {
     echo "Error creating tables and views: " . $conn->error;
 }
 
+$password1 = password_hash("hellomontreal", PASSWORD_DEFAULT);
+$password2 = password_hash("helloquebec", PASSWORD_DEFAULT);
+$password3 = password_hash("hellocanada", PASSWORD_DEFAULT);
 $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES('Patrick','Saint-Louis', 'sonic12345', NOW());
 
@@ -67,13 +67,13 @@ $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES('Jonathan','David', 'pokemon527', NOW());
 
                 INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$2y$10$AMyb4cbGSWSvEcQxt91ZVu5r5OV7/3mMZl7tn8wnZrJ1ddidYfVYW', 1);
+                VALUES('$password1', 1);
 
                 INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$2y$10$Lpd3JsgFW9.x2ft6Qo9h..xmtm82lmSuv/vaQKs9xPJ4rhKlMJAF.', 2);
+                VALUES('$password2', 2);
 
                 INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$2y$10$FRAyAIK6.TYEEmbOHF4JfeiBCdWFHcqRTILM7nF/7CPjE3dNEWj3W', 3);
+                VALUES('$password3', 3);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
                 VALUES(NOW(), 'réussite', 4, 1);

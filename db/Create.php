@@ -37,7 +37,7 @@ $sql_code = "CREATE TABLE IF NOT EXISTS player (
 
         CREATE TABLE IF NOT EXISTS score (
         scoreTime DATETIME NOT NULL,
-        result ENUM('réussite', 'échec', 'incomplet'),
+        result ENUM('réussite', 'échec', 'incomplet', 'gameover', 'win', 'incomplete'),
         livesUsed INTEGER NOT NULL,
         registrationOrder INTEGER,
         FOREIGN KEY (registrationOrder) REFERENCES player(registrationOrder)
@@ -76,10 +76,10 @@ $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES('$password3', 3);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'success', 4, 1);
+                VALUES(NOW(), 'win', 4, 1);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'failure', 6, 2);
+                VALUES(NOW(), 'gameover', 6, 2);
 
                 INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
                 VALUES(NOW(), 'incomplete', 5, 3);";

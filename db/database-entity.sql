@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS authenticator(
 
 CREATE TABLE IF NOT EXISTS score( 
     scoreTime DATETIME NOT NULL, 
-    result ENUM('réussite', 'échec', 'incomplet'),
+    result ENUM('réussite', 'échec', 'incomplet', 'gameover', 'win', 'incomplete'),
     livesUsed INTEGER NOT NULL,
     registrationOrder INTEGER, 
     FOREIGN KEY (registrationOrder) REFERENCES player(registrationOrder)
@@ -66,10 +66,10 @@ VALUES('$2y$10$FRAyAIK6.TYEEmbOHF4JfeiBCdWFHcqRTILM7nF/7CPjE3dNEWj3W', 3);
 
 -- 4.3.Table score
 INSERT INTO score(scoreTime, result , livesUsed, registrationOrder)
-VALUES(now(), 'réussite', 4, 1);
+VALUES(now(), 'win', 4, 1);
 
 INSERT INTO score(scoreTime, result , livesUsed, registrationOrder)
-VALUES(now(), 'échec', 6, 2);
+VALUES(now(), 'gameover', 6, 2);
 
 INSERT INTO score(scoreTime, result , livesUsed, registrationOrder)
-VALUES(now(), 'incomplet', 5, 3);
+VALUES(now(), 'incomplete', 5, 3);

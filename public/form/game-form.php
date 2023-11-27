@@ -79,19 +79,12 @@
       </div>
     </div>
   </div>
-  <!-- <p id="message"><?=$gameMessage ?></p> -->
   <div class="container" style="margin-top: 5%;">
     <form id="game" action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
         <h1 id="level" >Level <?=$currentLevel ?></h1>  
-
-      
         <h2 id="gameInstruction"><?=$gameInstruction ?></h1>
-        <h2 id="sequence"><?php 
-          foreach ($generatedSequence as $digit) {
-            echo $digit . "  ";
-          }
-          ?></h1>
+        <h2 id="sequence"><?php foreach ($generatedSequence as $digit) { echo $digit . "  ";}?></h2>
             <?php  
               if ($currentLevel == 1 || $currentLevel == 2 ||$currentLevel == 3 ||$currentLevel == 4 ){
 

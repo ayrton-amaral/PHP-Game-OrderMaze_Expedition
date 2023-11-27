@@ -22,7 +22,7 @@ if(empty($_SESSION["user"])){
             </ul>
             <span class="navbar-text mx-4" id="showCountDownDate"></span>
             <form class="d-flex my-2 my-lg-0" role="search" action="<?=FEATURES . 'signout.php'?>" method="get">
-                <button class="btn btn-sm btn-light" type="submit">Sign Out</button>
+                <button class="btn btn-sm btn-light" type="submit" style = "color:#5775FF;">Sign Out</button>
             </form>
         </div>
     </div>

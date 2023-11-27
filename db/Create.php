@@ -57,6 +57,7 @@ if ($conn->multi_query($sql_code)) {
 $password1 = password_hash("hellomontreal", PASSWORD_DEFAULT);
 $password2 = password_hash("helloquebec", PASSWORD_DEFAULT);
 $password3 = password_hash("hellocanada", PASSWORD_DEFAULT);
+
 $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES('Patrick','Saint-Louis', 'sonic12345', NOW());
 

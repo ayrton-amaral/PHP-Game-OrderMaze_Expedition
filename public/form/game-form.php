@@ -57,11 +57,26 @@
     
   ?>
 
+  <div class="container">
+    <div class="d-flex flex-row-reverse my-4">
+      <h4>
+        <?php for($i=0; $i<6; $i++) {
+          if($i < $currentLives) {
+            echo '<i class="bi bi-heart-fill mx-1" style="color: #8F3AC6"></i>';
+          } else {
+            echo '<i class="bi bi-heart mx-1" style="color: #8F3AC6"></i>';
+          }
+        }?>
+
+      </h4>
+    </div>
+  </div>
   <p id="message"><?=$gameMessage ?></p>
   <div class="container" style="margin-top: 10%;">
     <form id="game" action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
         <h1 id="level" >Level <?=$currentLevel ?></h1>  
+
       
         <h2 id="gameInstruction"><?=$gameInstruction ?></h1>
         <h2 id="sequence"><?php 

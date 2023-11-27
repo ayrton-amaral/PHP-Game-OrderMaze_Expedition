@@ -74,7 +74,7 @@
       <div class="toast align-items-center border-0 show" 
         style="background-color: #8F3AC6; color:white"  
         role="alert" aria-live="assertive" 
-        aria-atomic="true" data-bs-delay='{"show":0,"hide":15}'>
+        aria-atomic="true" id="myToast">
         <div class="d-flex">
           <div class="toast-body"><?=$gameMessage ?></div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -145,6 +145,12 @@
     </div>
       
     </form>
+    <script>
+      function hideToast(){
+        document.getElementById("myToast").classList.remove("show");
+      }
+      setTimeout(function() { hideToast(); }, 5000);
+    </script>
 </body>
 
 </html>

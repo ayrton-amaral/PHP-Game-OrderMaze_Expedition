@@ -52,7 +52,7 @@
               <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" value="<?= empty($_SESSION['password']) ? "" :  $_SESSION['password'] ?>">
               <label for="floatingPassword">Password</label>
             </div>
-            <?php if (!empty($_SESSION["singin_error_msg"])) { echo $_SESSION["singin_error_msg"] . "<br/>";} ?>
+            <?php if (!empty($_SESSION["signin_error_msg"])) { echo $_SESSION["signin_error_msg"] . "<br/>";} ?>
         
             <button class="btn btn-primary w-100 py-2" id="buttonSubmit" type="submit"  name="send">Sign in</button>
 
@@ -67,7 +67,7 @@
   </body>
   </html>
 <?php
-  if (!empty($_SESSION["singin_error_msg"])) { unset($_SESSION['singin_error_msg']);}
+  if (!empty($_SESSION["signin_error_msg"])) { unset($_SESSION['signin_error_msg']);}
   if (!empty($_SESSION["username"])) { unset($_SESSION['username']);}
   if (!empty($_SESSION["password"])) { unset($_SESSION['password']);}
 ?>

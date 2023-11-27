@@ -4,6 +4,7 @@
 <?php include_once __DIR__ . '\..\template\head.php' ; ?>
 
 <title>History</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body {
         background-color: #F7A52D;
@@ -17,7 +18,19 @@
         font-size: 42px;
         padding-top: 25%;
     }
-    
+    .checked {
+        color: white;
+        
+    }
+    .fa-star {
+        font-size: 24px; 
+        padding:5px;
+    }
+    .stars-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     </style>
 </head>
 <body>
@@ -27,12 +40,15 @@
         <div class="col-1"></div>
         <div class="col-10">
             <h1 class="h3 mb-3 fw-normal title" >You rock!!! Congratulations! </h1>
-            
+           
         </div>
         <div class="col-1"></div>
         </div>
     </div>
+    <div class="stars-container">
+        <i class="bi bi-star"></i>
 
+    </div>
 
 </body>
 </html>

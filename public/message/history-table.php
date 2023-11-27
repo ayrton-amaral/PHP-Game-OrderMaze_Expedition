@@ -13,7 +13,16 @@
         color: white;
         padding-top: 30px;
     }
+ 
+    .table>:not(caption)>*>*{
+        background-color: #A767D1;
+        color:white;
+    }
+
     
+    .td{
+        color: black; 
+    }
     </style>
 </head>
 <body>
@@ -23,9 +32,9 @@
         <div class="col-1"></div>
         <div class="col-10">
             <h1 class="h3 mb-3 fw-normal title" >History</h1>
-            <div class="table-responsive">
-                <table class="table " style="--bs-body-bg: #5775FF;" data-bs-theme="dark">
-                    <thead >
+            <div class="table-responsive" >
+                <table class="table">
+                    <thead>
                         <tr >
                             <th scope="col">Id</th>
                             <th scope="col">First Name</th>
@@ -35,7 +44,7 @@
                             <th scope="col">Date and time</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                         <?php foreach(getHistories() as $history) { ?>
                             <tr>
                                 <th><?=$history['id'] ?></th>

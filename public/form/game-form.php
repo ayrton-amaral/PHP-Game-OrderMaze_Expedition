@@ -32,7 +32,16 @@
     #level{
       color: black;
     }
-
+    #message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3%;
+      font-size: 24px; 
+      font-weight: bold;
+      color: #8F3AC6;
+    }
 
 
     </style>
@@ -48,6 +57,7 @@
     
   ?>
 
+  <p id="message"><?=$gameMessage ?></p>
   <div class="container" style="margin-top: 10%;">
     <form action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
@@ -102,7 +112,7 @@
                 
             ?>
       </div>
-      <p><?=$gameMessage ?></p>
+      
       <div class="container text-center">
         <div class="row justify-content-center">
           <div class="col-2">

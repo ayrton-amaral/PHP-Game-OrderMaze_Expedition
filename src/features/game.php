@@ -45,7 +45,7 @@ if(isset($_POST["send"])){
             $_SESSION['level'] = $currentLevel;
             $_SESSION['generatedSequence'] = generateSequence($currentLevel);
             $_SESSION['gameInstruction'] = generateMessage($currentLevel);
-            $_SESSION['gameMessage'] = "Correct!!!";
+            $_SESSION['gameMessage'] = "Correct!!! You've conquered the next level and you still have ".$currentLives." lives!!";
             header("Location: /php-final-project/public/form/game-form.php");
             exit();
         } else {
@@ -65,7 +65,7 @@ if(isset($_POST["send"])){
             $_SESSION['generatedSequence'] = generateSequence($currentLevel);
             $_SESSION['lives'] = $currentLives;
             $_SESSION['gameInstruction'] = generateMessage($currentLevel);
-            $_SESSION['gameMessage'] = "Incorrect!!!";
+            $_SESSION['gameMessage'] = "Incorrect!!! But you still have ".$currentLives." lives! Try again!";
             header("Location: /php-final-project/public/form/game-form.php");
             exit();
         } else {
@@ -87,7 +87,7 @@ else {
     $_SESSION['generatedSequence'] = generateSequence($currentLevel);
     $_SESSION['lives'] = $currentLives;
     $_SESSION['gameInstruction'] = generateMessage($currentLevel);
-    $_SESSION['gameMessage'] = "";
+    $_SESSION['gameMessage'] = "Let's play!!! You have ".$currentLives." lives!";
 
 
     header("Location: /php-final-project/public/form/game-form.php");

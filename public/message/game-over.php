@@ -13,7 +13,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: black;
+        color: white;
         font-size: 42px;
         padding-top: 25%;
         

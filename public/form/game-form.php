@@ -61,10 +61,13 @@
       $gameMessage = empty($_SESSION['gameMessage']) ? "" : $_SESSION['gameMessage'];
     
   ?>
+<div class="container"> 
+    <div class="d-flex justify-content-between align-items-center my-4">
+    <div>
+      <h1 id="level" >Level <?=$currentLevel ?></h1>  
+    </div>
 
-  <div class="container">
-    <div class="d-flex flex-row-reverse my-4">
-      <h4>
+      <h4 class="ms-auto">
         <?php for($i=0; $i<6; $i++) {
           if($i < $currentLives) {
             echo '<i class="bi bi-heart-fill mx-1" style="color: #8F3AC6"></i>';
@@ -72,25 +75,27 @@
             echo '<i class="bi bi-heart mx-1" style="color: #8F3AC6"></i>';
           }
         }?>
-
-      </h4>
+        </h4>
     </div>
+  </div>
+
+  <div class="container"> 
     <div class="d-flex flex-row-reverse my-4">
-      <div class="toast align-items-center border-0 show" 
-        style="background-color: #8F3AC6; color:white"  
-        role="alert" aria-live="assertive" 
-        aria-atomic="true" id="myToast">
-        <div class="d-flex">
-          <div class="toast-body"><?=$gameMessage ?></div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        <div class="toast align-items-center border-0 show" 
+          style="background-color: #8F3AC6; color:white"  
+          role="alert" aria-live="assertive" 
+          aria-atomic="true" id="myToast">
+          <div class="d-flex">
+            <div class="toast-body"><?=$gameMessage ?></div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
         </div>
-      </div>
     </div>
   </div>
   <div class="container" style="margin-top: 5%;">
     <form id="game" action=<?= FEATURES . "game.php" ?> method="post">
       <div class="container text-center">
-        <h1 id="level" >Level <?=$currentLevel ?></h1>  
+       
         <h2 id="gameInstruction" style = "margin-bottom:3%;"><?=$gameInstruction ?></h1>
         <h2 id="sequence"><?php foreach ($generatedSequence as $digit) { echo $digit . "  ";}?></h2>
             <?php  

@@ -18,19 +18,18 @@
         font-size: 42px;
         padding-top: 25%;
     }
-    .checked {
+    #stars {
         color: white;
-        
-    }
-    .fa-star {
         font-size: 24px; 
         padding:5px;
+        
     }
     .stars-container{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    
     </style>
 </head>
 <body>
@@ -40,15 +39,18 @@
         <div class="col-1"></div>
         <div class="col-10">
             <h1 class="h3 mb-3 fw-normal title" >You rock!!! Congratulations! </h1>
-           
         </div>
         <div class="col-1"></div>
         </div>
     </div>
-    <div class="stars-container">
-        <i class="bi bi-star"></i>
-
+    <div class ="stars-container">
+        <i id = "stars" class="bi bi-star"></i>
+        <i id = "stars" class="bi bi-star"></i>
+        <i id = "stars" class="bi bi-star"></i>
+        <i id = "stars" class="bi bi-star"></i>
+        <i id = "stars" class="bi bi-star"></i>
     </div>
+
 
 </body>
 </html>

@@ -54,42 +54,7 @@ if ($conn->multi_query($sql_code)) {
     echo "Error creating tables and views: " . $conn->error . "<br>";
 }
 
-$password1 = password_hash("hellomontreal", PASSWORD_DEFAULT);
-$password2 = password_hash("helloquebec", PASSWORD_DEFAULT);
-$password3 = password_hash("hellocanada", PASSWORD_DEFAULT);
-
-$sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
-                VALUES('Patrick','Saint-Louis', 'sonic12345', NOW());
-
-                INSERT INTO player(fName, lName, userName, registrationTime)
-                VALUES('Marie','Jourdain', 'asterix2023', NOW());
-
-                INSERT INTO player(fName, lName, userName, registrationTime)
-                VALUES('Jonathan','David', 'pokemon527', NOW());
-
-                INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$password1', 1);
-
-                INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$password2', 2);
-
-                INSERT INTO authenticator(passCode, registrationOrder)
-                VALUES('$password3', 3);
-
-                INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'win', 4, 1);
-
-                INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'gameover', 6, 2);
-
-                INSERT INTO score(scoreTime, result, livesUsed, registrationOrder)
-                VALUES(NOW(), 'incomplete', 5, 3);";
-
-if ($conn->multi_query($sql_insert)) {
-    echo "Initial data inserted successfully." . "<br>";
-} else {
-    echo "Error inserting initial data: " . $conn->error . "<br>";
-}
-
 $conn->close();
+
 ?>
+<a href="http://localhost/php-final-project/">Go to signin</a>

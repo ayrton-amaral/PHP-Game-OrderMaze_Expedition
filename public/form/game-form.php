@@ -30,7 +30,7 @@
 
     }
     #level{
-      color: black;
+      color: #8F3AC6;
     }
     .buttonCancel {
       background-color: #5775FF;

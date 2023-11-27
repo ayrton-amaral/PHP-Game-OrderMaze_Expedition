@@ -11,10 +11,10 @@ if ($conn->connect_error) {
 $sql = "CREATE DATABASE IF NOT EXISTS " . DB;
 
 if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully\n";
+    echo "Database created successfully" . "<br>";
 }
 else {
-    echo "Error creating database: " . $conn->error;
+    echo "Error creating database: " . $conn->error . "<br>";
 }
 
 $conn->select_db(DB);
@@ -49,9 +49,9 @@ $sql_code = "CREATE TABLE IF NOT EXISTS player (
         WHERE p.registrationOrder = s.registrationOrder;";
 
 if ($conn->multi_query($sql_code)) {
-    echo "Tables and views created successfully.\n";
+    echo "Tables and views created successfully." . "<br>";
 } else {
-    echo "Error creating tables and views: " . $conn->error;
+    echo "Error creating tables and views: " . $conn->error . "<br>";
 }
 
 $password1 = password_hash("hellomontreal", PASSWORD_DEFAULT);
@@ -86,9 +86,9 @@ $sql_insert =   "INSERT INTO player(fName, lName, userName, registrationTime)
                 VALUES(NOW(), 'incomplete', 5, 3);";
 
 if ($conn->multi_query($sql_insert)) {
-    echo "Initial data inserted successfully.\n";
+    echo "Initial data inserted successfully." . "<br>";
 } else {
-    echo "Error inserting initla data: " . $conn->error;
+    echo "Error inserting initial data: " . $conn->error . "<br>";
 }
 
 $conn->close();

@@ -6,12 +6,27 @@
 <title>History</title>
 <style>
     body {
-        background-color: #8F3AC6;
+        background-color: #F7A52D;
     }
     
     .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #E5E5E5;
+        font-size: 42px;
+        padding-top: 25%;
+    }
+    #stars {
         color: white;
-        padding-top: 30px;
+        font-size: 24px; 
+        padding:5px;
+        
+    }
+    .stars-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     </style>
@@ -23,10 +38,16 @@
         <div class="col-1"></div>
         <div class="col-10">
             <h1 class="h3 mb-3 fw-normal title" >You rock!!! Congratulations! </h1>
-            
         </div>
         <div class="col-1"></div>
         </div>
+    </div>
+    <div class ="stars-container">
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
+        <i id = "stars" class="bi bi-star-fill"></i>
     </div>
 
 

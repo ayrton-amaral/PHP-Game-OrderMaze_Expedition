@@ -10,8 +10,13 @@
     }
     
     .title {
-        color: white;
-        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 42px;
+        padding-top: 25%;
+        
     }
     
     </style>
@@ -23,7 +28,6 @@
         <div class="col-1"></div>
         <div class="col-10">
             <h1 class="h3 mb-3 fw-normal title" >I'm sorry! Try again! </h1>
-            
         </div>
         <div class="col-1"></div>
         </div>

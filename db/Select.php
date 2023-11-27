@@ -44,7 +44,7 @@ function getHistory(){
         echo "Failed to connect to MySQL: " . $mysqli->connect_error;
         exit();
     }
-    $result = $mysqli->query("SELECT * FROM history ");
+    $result = $mysqli->query("SELECT * FROM history order by scoreTime desc");
     // Associative array
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     // Free result set

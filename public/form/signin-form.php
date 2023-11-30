@@ -50,7 +50,6 @@
               <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" value="<?= empty($_SESSION['password']) ? "" :  $_SESSION['password'] ?>">
               <label for="floatingPassword">Password</label>
             </div>
-            <?php if (!empty($_SESSION["signin_error_msg"])) { echo $_SESSION["signin_error_msg"] . "<br/>";} ?>
             <div class="fw-bold mx-2" style="color: #FBBE62">
               <?php if (!empty($_SESSION["signin_error_msg"])) { echo $_SESSION["signin_error_msg"] . "<br/>";} ?>
             </div>

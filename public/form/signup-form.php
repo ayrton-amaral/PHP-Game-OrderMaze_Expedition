@@ -5,7 +5,7 @@
   $password = "";
   $confirmPassword = ""; 
   session_start(); 
-  if(!empty($_SESSION['singup-form']) && $_SESSION['singup-form'] == true)
+  if(!empty($_SESSION['signup-form']) && $_SESSION['signup-form'] == true)
   {
     $fname = empty($_SESSION['fname']) ? "" :  $_SESSION['fname'];
     $lname = empty($_SESSION['lname']) ? "" :  $_SESSION['lname'];
@@ -37,32 +37,22 @@
     body {
       background-color: #8F3AC6;
     }
-
     #buttonSubmit {
       background-color: #F7A52D;
       color: white;
       margin-top: 10px;
-      border: 0px;
     }
-
+    .form-floating {
+      padding: 5px;
+    }
     #signUp {
       color: white;
       padding-top: 30px;
     }
-
-    .form-floating {
-      padding: 5px;
-    }
-
     #btnLogin {
       background-color: #5775FF;
-      border: 0px;
     }
-    #ajaxFNameMsg,#ajaxLNameMsg, #ajaxUsernameMsg, #ajaxPasswordMsg, #ajaxConfirmPasswordMsg {
-      color: #FBBE62;
-    }
-    
-    
+   
   </style>
 </head>
 
@@ -77,7 +67,7 @@
         <label for="fname">First Name</label>
       </div>
       
-      <div id="ajaxFNameMsg" class="fw-bold mx-2">
+      <div id="ajaxFNameMsg" class="fw-bold mx-2 ajaxValidationMsg">
           <?php echo feedbackMessages("fname") ?>
       </div>
       
@@ -86,7 +76,7 @@
         <label for="lname">Last Name</label>
       </div>
       
-      <div id="ajaxLNameMsg" class="fw-bold mx-2">
+      <div id="ajaxLNameMsg" class="fw-bold mx-2 ajaxValidationMsg">
       <?php echo feedbackMessages("lname") ?>
       </div>
       
@@ -95,7 +85,7 @@
         <label for="username">Username</label>
       </div>
       
-      <div id="ajaxUsernameMsg" class="fw-bold mx-2">
+      <div id="ajaxUsernameMsg" class="fw-bold mx-2 ajaxValidationMsg">
       <?php echo feedbackMessages("username") ?>
       </div>
       
@@ -104,7 +94,7 @@
         <label for="floatingPassword">Password</label>
       </div>
       
-      <div id="ajaxPasswordMsg" class="fw-bold mx-2">
+      <div id="ajaxPasswordMsg" class="fw-bold mx-2 ajaxValidationMsg">
       <?php echo feedbackMessages("password") ?>
       </div>
       
@@ -113,14 +103,14 @@
         <label for="floatingConfirmPassword">Confirm Password</label>
       </div>
       
-      <div id="ajaxConfirmPasswordMsg" class="fw-bold mx-2">
+      <div id="ajaxConfirmPasswordMsg" class="fw-bold mx-2 ajaxValidationMsg">
       <?php echo feedbackMessages("confirmPassword") ?>
       </div>
 
-      <button class="btn btn-primary w-100 py-2" id="buttonSubmit" name="SEND" type="submit">Create account</button>
+      <button class="btn btn-primary w-100 py-2 border-0" id="buttonSubmit" name="SEND" type="submit">Create account</button>
 
     </form>
-    <button class="btn btn-primary w-100 py-2" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
+    <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
 
   </main>
 

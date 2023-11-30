@@ -10,11 +10,11 @@
         body{
           background-color: #5775FF;
         }
-        #title{
-          padding:30px;
+        .display-3{
           color:white;
+          padding:30px;
         }
-        #changePassword{
+        .h6{
           padding-top:5px;
           text-align: center;
           color: white;
@@ -26,11 +26,9 @@
           background-color: #F7A52D;
           color:white;
           margin-top:10px;
-          border: 0px;
         }
-        #signIn{
+        .fw-normal{
           color: white;
-          border: 0px;
         }
         #buttonRegister{
           background-color: #8F3AC6;
@@ -54,18 +52,18 @@
             </div>
             <?php if (!empty($_SESSION["signin_error_msg"])) { echo $_SESSION["signin_error_msg"] . "<br/>";} ?>
             <div class="fw-bold mx-2" style="color: #FBBE62">
-              <?php if (!empty($_SESSION["singin_error_msg"])) { echo $_SESSION["singin_error_msg"] . "<br/>";} ?>
+              <?php if (!empty($_SESSION["signin_error_msg"])) { echo $_SESSION["signin_error_msg"] . "<br/>";} ?>
             </div>
             
         
-            <button class="btn btn-primary w-100 py-2" id="buttonSubmit" type="submit"  name="send">Sign in</button>
+            <button class="btn btn-primary w-100 py-2 border-0" id="buttonSubmit" type="submit"  name="send">Sign in</button>
 
           </form>
-          <button class="btn btn-primary w-100 py-2" id= "buttonRegister" onclick="window.location.href = 'signup-form.php';">Register</button>
+          <button class="btn btn-primary w-100 py-2 border-0" id= "buttonRegister" onclick="window.location.href = 'signup-form.php';">Register</button>
 
         </main>
         <div class="d-flex justify-content-center">
-          <a href="pw-update-form.php" class="h6" id="changePassword">Forgot password?</a>
+          <a href="pw-update-form.php" class="h6">Forgot password?</a>
       </div>
 
   </body>

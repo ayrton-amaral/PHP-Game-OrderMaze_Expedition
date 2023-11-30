@@ -17,9 +17,8 @@ function feedbackMessages($inputId){
         background-color: #F7A52D;
         color:white;
         margin-top:10px;
-        border: 0px;
      }
-     #changePassword{
+     .fw-normal{
         color: white;
         padding-top:30px;
       }
@@ -28,9 +27,7 @@ function feedbackMessages($inputId){
       }
       #btnLogin{
         background-color: #5775FF;
-        border: 0px;
       }
-        
     </style>
 </head>
 <body>
@@ -65,10 +62,10 @@ function feedbackMessages($inputId){
             <?php echo feedbackMessages("confirmPassword") ?>
           </div>
 
-          <button class="btn btn-primary w-100 py-2" id= "buttonSubmit" type="submit" name="send">Edit</button>
+          <button class="btn btn-primary w-100 py-2 border-0" id= "buttonSubmit" type="submit" name="send">Edit</button>
 
         </form>
-        <button class="btn btn-primary w-100 py-2" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
+        <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
 
       </main>
 

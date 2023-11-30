@@ -16,7 +16,6 @@
         font-size: 42px;
         padding-top: 25%;
     }
-<<<<<<< Updated upstream
     #playAgain{
       background-color: #5775FF;
       color: white;
@@ -34,8 +33,6 @@
             text-decoration: none;
     }
     
-=======
->>>>>>> Stashed changes
     </style>
 </head>
 <body>
@@ -44,7 +41,7 @@
         <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <h1 class="h3 mb-3 fw-normal title" >I'm sorry. It wasn't this time. Try again! </h1>
+            <h1 class="h3 mb-3 fw-normal title" >I'm sorry. Try again! </h1>
         </div>
         <div class="col-1"></div>
         </div>

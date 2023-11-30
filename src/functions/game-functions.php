@@ -53,22 +53,22 @@ function generateSequence($currentLevel) {
 function generateInstruction($currentLevel) {
 
     if ($currentLevel == 1 ){
-        $gameInstruction = "Ascending order 6 letters:";
+        $gameInstruction = "Sort the 6 letters in Ascending Order:";
     } 
     elseif ($currentLevel == 2 ){
-        $gameInstruction = "Descending order 6 letters:";
+        $gameInstruction = "Sort the 6 letters in Descending Order:";
     }
     elseif ($currentLevel == 3 ){
-        $gameInstruction = "Ascending order 6 numbers:";
+        $gameInstruction = "Sort the 6 numbers in Ascending Order:";
     }
     elseif ($currentLevel == 4 ){
-        $gameInstruction = "Descending order 6 numbers:";
+        $gameInstruction = "Sort the 6 numbers in Descending Order:";
     }
     elseif ($currentLevel == 5 ){
-        $gameInstruction = "Identify the first and last letter:";
+        $gameInstruction = "Insert the first and last letter in Ascending Order:";
     }
     elseif ($currentLevel == 6 ){
-        $gameInstruction = "Identify the smallest and largest number:";
+        $gameInstruction = "Insert the smallest and largest number in Ascending Order:";
     }
 
     return $gameInstruction;
@@ -93,16 +93,16 @@ function incorrectAnswer($arr1, $arr2, $level) {
     }
 
     if ($correctValues == 6 ){
-        $incorrectAnswer = "Result: Incorrect. </br> Your letters/numbers were right, but they were not arranged in the correct order.";
+        $incorrectAnswer = "Result: Incorrect. </br> Your inputs were correct, but they were not arranged in the requested order.";
     } 
     elseif ($correctValues == 0){
-        $incorrectAnswer = "Result: Incorrect </br>  All your letters/numbers were different from ours.";
+        $incorrectAnswer = "Result: Incorrect </br>  All of your inputs were incorrect.";
     } 
     elseif ($correctValues == 4 && ($level == 5 || $level == 6)){
-        $incorrectAnswer = "Result: Incorrect </br>  All your letters/numbers were different from ours.";
+        $incorrectAnswer = "Result: Incorrect </br>  All of your inputs were incorrect.";
     } 
     else {
-        $incorrectAnswer = "Result: Incorrect </br>  Some of your letters/numbers were different from ours.";
+        $incorrectAnswer = "Result: Incorrect </br>  Some of your inputs were incorrect.";
     } 
 
     return $incorrectAnswer;

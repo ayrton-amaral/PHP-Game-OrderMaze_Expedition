@@ -53,7 +53,7 @@
         <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <h1 class="h3 mb-3 fw-normal title" >You rock!!! Congratulations! </h1>
+            <h1 class="h3 mb-3 fw-normal title" >You rock! Congratulations! </h1>
         </div>
         <div class="col-1"></div>
         </div>

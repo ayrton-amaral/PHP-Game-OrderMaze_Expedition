@@ -45,7 +45,6 @@
       margin-right: 80px;
       margin-bottom: 20px;
     }
-<<<<<<< Updated upstream
    
     .d-flex.flex-row-reverse.my-4 {
       position: relative; /* Add this to the parent container to create a positioning context */
@@ -60,8 +59,6 @@
     }
 
 
-=======
->>>>>>> Stashed changes
     </style>
 </head>
 
@@ -173,7 +170,7 @@
       function hideToast(){
         document.getElementById("myToast").classList.remove("show");
       }
-      setTimeout(function() { hideToast(); }, 5000);
+      setTimeout(function() { hideToast(); }, 7000);
     </script>
 </body>
 

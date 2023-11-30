@@ -8,7 +8,6 @@
     body {
         background-color: #8F3AC6;
     }
-    
     .title {
         display: flex;
         justify-content: center;
@@ -16,8 +15,8 @@
         color: white;
         font-size: 42px;
         padding-top: 25%;
-        
     }
+<<<<<<< Updated upstream
     #playAgain{
       background-color: #5775FF;
       color: white;
@@ -35,6 +34,8 @@
             text-decoration: none;
     }
     
+=======
+>>>>>>> Stashed changes
     </style>
 </head>
 <body>

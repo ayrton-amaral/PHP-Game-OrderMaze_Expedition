@@ -37,7 +37,7 @@ if(isset($_POST["send"])){
     }
 
     if(strlen($errorMessages) > 0){
-        $_SESSION['singin_error_msg'] = $errorMessages;
+        $_SESSION['signin_error_msg'] = $errorMessages;
         header("Location: /php-final-project/public/form/signin-form.php");
         exit();
     }

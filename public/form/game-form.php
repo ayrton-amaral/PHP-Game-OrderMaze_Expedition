@@ -41,12 +41,23 @@
       font-size: 18px; 
       border-radius: 5px;
       position: fixed;
-      bottom: 0;
-      right: 0;
+      bottom: 100;
+      right: 200;
       margin-right: 80px;
       margin-bottom: 20px;
     }
    
+    .d-flex.flex-row-reverse.my-4 {
+      position: relative; /* Add this to the parent container to create a positioning context */
+    }
+
+    .toast {
+      position: absolute;
+      bottom: 5px; /* Adjust the distance from the bottom as needed */
+      right: 200px; /* Adjust the distance from the right as needed */
+      z-index: 1000; /* Adjust the z-index to be higher than other elements */
+
+    }
 
 
     </style>

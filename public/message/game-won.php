@@ -28,6 +28,22 @@
         justify-content: center;
         align-items: center;
     }
+    #playAgain{
+      background-color: #5775FF;
+      color: white;
+      margin-top: 26px;
+      border: 0px;
+      padding: 12px;
+      font-size: 18px; 
+      border-radius: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+
+    }
+    a {
+            text-decoration: none;
+    }
     
     </style>
 </head>
@@ -49,7 +65,11 @@
         <i id = "stars" class="bi bi-star-fill"></i>
         <i id = "stars" class="bi bi-star-fill"></i>
     </div>
-
+    <div>
+        <a href="<?= INDEX ?>">
+            <button id="playAgain">Play Again!</button>
+        </a>
+    </div>
 
 </body>
 </html>

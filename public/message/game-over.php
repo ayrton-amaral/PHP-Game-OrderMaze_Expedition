@@ -18,6 +18,22 @@
         padding-top: 25%;
         
     }
+    #playAgain{
+      background-color: #5775FF;
+      color: white;
+      margin-top: 26px;
+      border: 0px;
+      padding: 12px;
+      font-size: 18px; 
+      border-radius: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+
+    }
+    a {
+            text-decoration: none;
+    }
     
     </style>
 </head>
@@ -27,10 +43,15 @@
         <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <h1 class="h3 mb-3 fw-normal title" >I'm sorry! Try again! </h1>
+            <h1 class="h3 mb-3 fw-normal title" >I'm sorry. It wasn't this time. Try again! </h1>
         </div>
         <div class="col-1"></div>
         </div>
+    </div>
+    <div>
+        <a href="<?= INDEX ?>">
+            <button id="playAgain">Play Again!</button>
+        </a>
     </div>
 
 

@@ -27,9 +27,8 @@
       margin-left: auto;
       margin-right: auto;
       display: block;
-
     }
-    #level{
+    .level{
       color: #8F3AC6;
     }
     .buttonCancel {
@@ -46,6 +45,7 @@
       margin-right: 80px;
       margin-bottom: 20px;
     }
+<<<<<<< Updated upstream
    
     .d-flex.flex-row-reverse.my-4 {
       position: relative; /* Add this to the parent container to create a positioning context */
@@ -60,6 +60,8 @@
     }
 
 
+=======
+>>>>>>> Stashed changes
     </style>
 </head>
 
@@ -75,7 +77,7 @@
 <div class="container"> 
     <div class="d-flex justify-content-between align-items-center my-4">
     <div>
-      <h1 id="level" >Level <?=$currentLevel ?></h1>  
+      <h1 class="level" >Level <?=$currentLevel ?></h1>  
     </div>
 
       <h4 class="ms-auto">

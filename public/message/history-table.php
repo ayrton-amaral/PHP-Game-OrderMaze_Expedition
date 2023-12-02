@@ -43,7 +43,7 @@
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Outcome of the game</th>
-                            <th scope="col">Number of lives remained</th>
+                            <th scope="col">Number of lives used</th>
                             <th scope="col">Date and time</th>
                         </tr>
                     </thead>

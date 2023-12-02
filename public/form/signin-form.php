@@ -9,6 +9,7 @@
   <style>
     body{
       background-color: #5775FF;
+      position: relative;
     }
 
     .display-3{
@@ -38,6 +39,10 @@
     
     #buttonRegister{
       background-color: #8F3AC6;
+    }
+    footer {
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
@@ -72,7 +77,7 @@
     </div>
 </body>
 </html>
-
+<?php include_once __DIR__ . '\..\template\footer.php' ; ?>
 <?php
   if (!empty($_SESSION["signin_error_msg"])) { unset($_SESSION['signin_error_msg']);}
   if (!empty($_SESSION["username"])) { unset($_SESSION['username']);}

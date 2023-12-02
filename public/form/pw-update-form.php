@@ -32,9 +32,6 @@
         padding: 5px;
       }
       
-      #btnLogin{
-        background-color: #5775FF;
-      }
   </style>
 </head>
 
@@ -73,7 +70,7 @@
 
         </form>
 
-        <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
+        <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" style = "background-color: #5775FF; margin-bottom: 15px;">Login</button>
     </main>
 
   <script type="text/javascript" src="..\assets\js\main.js"></script>
@@ -82,3 +79,4 @@
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
 </body>
 </html>
+<?php include_once __DIR__ . '\..\template\footer.php' ; ?>

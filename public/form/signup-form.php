@@ -126,7 +126,10 @@ function inputStatus($inputId){
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode1-ajax.js"></script>
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
 </body>
+
 </html>
+<?php include_once __DIR__ . '\..\template\footer.php' ; ?>
+
 
 <?php
   if (!empty($_SESSION["error_msg"])) { unset($_SESSION['error_msg']);}

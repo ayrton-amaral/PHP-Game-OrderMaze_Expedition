@@ -1,63 +1,68 @@
 <?php
-  $fname = "";
-  $lname = "";
-  $username = "";
-  $password = "";
-  $confirmPassword = ""; 
-  session_start(); 
-  if(!empty($_SESSION['signup-form']) && $_SESSION['signup-form'] == true)
-  {
-    $fname = empty($_SESSION['fname']) ? "" :  $_SESSION['fname'];
-    $lname = empty($_SESSION['lname']) ? "" :  $_SESSION['lname'];
-    $username = empty($_SESSION['username']) ? "" :  $_SESSION['username'];
-    $password = empty($_SESSION['password']) ? "" :  $_SESSION['password'];
-    $confirmPassword = empty($_SESSION['fname']) ? "" :  $_SESSION['confirmPassword'];
+$fname = "";
+$lname = "";
+$username = "";
+$password = "";
+$confirmPassword = "";
+
+session_start();
+
+if(!empty($_SESSION['signup-form']) && $_SESSION['signup-form'] == true) {
+  $fname = empty($_SESSION['fname']) ? "" :  $_SESSION['fname'];
+  $lname = empty($_SESSION['lname']) ? "" :  $_SESSION['lname'];
+  $username = empty($_SESSION['username']) ? "" :  $_SESSION['username'];
+  $password = empty($_SESSION['password']) ? "" :  $_SESSION['password'];
+  $confirmPassword = empty($_SESSION['fname']) ? "" :  $_SESSION['confirmPassword'];
+}
+
+function feedbackMessages($inputId){
+  return empty($_SESSION["error_msg"]) ? "" : $_SESSION["error_msg"][$inputId];
+}
+
+function inputStatus($inputId){
+  $status = "";
+
+  if(!empty($_SESSION["error_msg"])){
+    $status = $_SESSION["error_msg"][$inputId] == "" ? "is-valid" : "is-invalid";
   }
 
-  
-  function feedbackMessages($inputId){
-    return empty($_SESSION["error_msg"]) ? "" : $_SESSION["error_msg"][$inputId];
-  }
-  
-  function inputStatus($inputId){
-    $status = "";
-    if(!empty($_SESSION["error_msg"])){
-      $status = $_SESSION["error_msg"][$inputId] == "" ? "is-valid" : "is-invalid";
-    }
-    return $status;
-  }
-
+  return $status;
+}
 ?>
-<html>
 
+<html>
 <head>
   <?php include_once __DIR__ . '\..\template\head.php'; ?>
+
   <title>SignUp</title>
+
   <style>
     body {
       background-color: #8F3AC6;
     }
+
     #buttonSubmit {
       background-color: #F7A52D;
       color: white;
       margin-top: 10px;
     }
+
     .form-floating {
       padding: 5px;
     }
+
     #signUp {
       color: white;
       padding-top: 30px;
     }
+
     #btnLogin {
       background-color: #5775FF;
     }
-   
   </style>
 </head>
 
 <body>
-
   <main class="form-signin w-100 m-auto">
 
     <form action=<?= FEATURES . "signup.php" ?> method="post">
@@ -121,8 +126,8 @@
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode1-ajax.js"></script>
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\pcode2-ajax.js"></script>
 </body>
-
 </html>
+
 <?php
   if (!empty($_SESSION["error_msg"])) { unset($_SESSION['error_msg']);}
   if (!empty($_SESSION["fname"])) { unset($_SESSION['fname']);}

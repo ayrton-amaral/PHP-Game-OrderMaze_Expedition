@@ -1,5 +1,6 @@
 <?php 
 include_once __DIR__ . '\..\..\db\Select.php';
+
 if(isset($_GET['text'])){
     $username = $_GET['text'];
     
@@ -13,6 +14,5 @@ if(isset($_GET['text'])){
         else {
             echo "";
         }
-    }
-    
+    }  
  }

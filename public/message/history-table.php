@@ -1,32 +1,35 @@
 <?php include_once __DIR__ . '\..\..\src\features\history.php'; ?>
+
 <html>
 <head>
-<?php include_once __DIR__ . '\..\template\head.php' ; ?>
+    <?php include_once __DIR__ . '\..\template\head.php'; ?>
 
-<title>History</title>
-<style>
-    body {
-        background-color: #8F3AC6;
-    }
-    
-    .title {
-        color: white;
-        padding-top: 30px;
-    }
- 
-    .table>:not(caption)>*>*{
-        background-color: #A767D1;
-        color:white;
-    }
+    <title>History</title>
 
+    <style>
+        body {
+            background-color: #8F3AC6;
+        }
+        
+        .title {
+            color: white;
+            padding-top: 30px;
+        }
     
-    .td{
-        color: black; 
-    }
+        .table>:not(caption)>*>*{
+            background-color: #A767D1;
+            color:white;
+        }
+        
+        .td{
+            color: black; 
+        }
     </style>
 </head>
+
 <body>
     <?php include_once __DIR__ . '\..\template\nav.php' ; ?>
+
     <div class="container">
         <div class="row">
         <div class="col-1"></div>
@@ -40,7 +43,7 @@
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Outcome of the game</th>
-                            <th scope="col">Number of lives used</th>
+                            <th scope="col">Number of lives remained</th>
                             <th scope="col">Date and time</th>
                         </tr>
                     </thead>
@@ -62,7 +65,6 @@
         <div class="col-1"></div>
         </div>
     </div>
-
 
 </body>
 </html>

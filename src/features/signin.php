@@ -1,24 +1,29 @@
 <?php
 include_once __DIR__ . '\..\..\db\Select.php';
-if(isset($_POST["send"])){
+
+if(isset($_POST["send"])) {
     session_start();
+
     $errorMessages = "";
 
     $_SESSION['username'] = $_POST["username"];
 
     if(strlen($_POST["username"]) == 0){
         $errorMessages = "Username is required.";
-    }
-    else {
+    } else {
         $user = getPlayerByUserName($_POST["username"]);
+
         if($user == null){
             $errorMessages = "Username not found.";
         } else {
             var_dump($user);
+
             $authenticator = getPassCode($user["registrationOrder"]);
             echo "<br/>";
+
             var_dump($authenticator);
-            if($authenticator == null){
+
+            if($authenticator == null) {
                 $errorMessages = "Invalid password.";
             } else {
                 if(!password_verify($_POST["password"],  $authenticator["passCode"])){
@@ -41,7 +46,5 @@ if(isset($_POST["send"])){
         header("Location: /php-final-project/public/form/signin-form.php");
         exit();
     }
-
 }
-
 ?>

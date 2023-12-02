@@ -1,37 +1,44 @@
 <html>
 <head>
-<?php 
-include_once __DIR__ . '\..\template\head.php' ;
-session_start(); 
-function feedbackMessages($inputId){
-  return empty($_SESSION["error_msg_pw"]) ? "" : $_SESSION["error_msg_pw"][$inputId];
-}
-?>
+  <?php 
+    include_once __DIR__ . '\..\template\head.php' ;
 
-    <title>Change password</title>
-    <style>
+    session_start();
+
+    function feedbackMessages($inputId){
+      return empty($_SESSION["error_msg_pw"]) ? "" : $_SESSION["error_msg_pw"][$inputId];
+    }
+  ?>
+
+  <title>Change password</title>
+
+  <style>
     body{
         background-color: #8F3AC6;
     }
+
     #buttonSubmit{
         background-color: #F7A52D;
         color:white;
         margin-top:10px;
      }
+
      .fw-normal{
         color: white;
         padding-top:30px;
       }
+
       .form-floating {
         padding: 5px;
       }
+      
       #btnLogin{
         background-color: #5775FF;
       }
-    </style>
+  </style>
 </head>
-<body>
 
+<body>
     <main class="form-signin w-100 m-auto">
         <form action=<?= FEATURES . "pw-update.php" ?> method="post">
           <h1 class="h3 mb-3 fw-normal" id="changePassword">Change Password</h1>
@@ -65,9 +72,9 @@ function feedbackMessages($inputId){
           <button class="btn btn-primary w-100 py-2 border-0" id= "buttonSubmit" type="submit" name="send">Edit</button>
 
         </form>
-        <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
 
-      </main>
+        <button class="btn btn-primary w-100 py-2 border-0" onclick="window.location.href = 'signin-form.php';" id="btnLogin">Login</button>
+    </main>
 
   <script type="text/javascript" src="..\assets\js\main.js"></script>
   <script type="text/javascript" src="..\assets\js\signup-onkeyup\uname-pw-ajax.js"></script>

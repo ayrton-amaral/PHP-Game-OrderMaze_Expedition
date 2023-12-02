@@ -1,5 +1,4 @@
 <?php
-
 include_once 'Database.php';
 
 $conn = new mysqli(HOST, USER, PASS);
@@ -55,6 +54,6 @@ if ($conn->multi_query($sql_code)) {
 }
 
 $conn->close();
-
 ?>
-<a href="http://localhost/php-final-project/">Go to signin</a>
+
+<a href="http://localhost/php-final-project/">Go to Sign In</a>

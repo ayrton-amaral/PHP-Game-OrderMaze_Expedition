@@ -1,5 +1,4 @@
 <?php 
-
 if(isset($_GET['text'])){
     $flname = $_GET['text'];
     
@@ -10,10 +9,6 @@ if(isset($_GET['text'])){
         echo "";
     } else {
         echo "Must start with a letter a-z or A-Z";
-    }
-    
+    } 
  }
-
-
-
 ?>

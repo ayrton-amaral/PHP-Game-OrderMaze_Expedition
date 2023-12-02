@@ -25,26 +25,30 @@ function AsyncRequest() {
         }
       }
     }
+
     return request;
   }
 
 function ajaxRealTimeValidation(phpFileName, inputId, feedbackPlace) {
   let text_value = document.getElementById(inputId).value;
   var xmlhttp = new AsyncRequest();
-  xmlhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        if (this.responseText != null) {
-          document.getElementById(inputId).classList.remove("is-valid")
-          document.getElementById(inputId).classList.add("is-invalid")
-          document.getElementById(feedbackPlace).innerHTML = this.responseText;
-        }
-        if(this.responseText == "") {
-            document.getElementById(inputId).classList.remove("is-invalid")
-            document.getElementById(inputId).classList.add("is-valid")
-            document.getElementById(feedbackPlace).innerHTML = "";
-        }
+
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText != null) {
+        document.getElementById(inputId).classList.remove("is-valid")
+        document.getElementById(inputId).classList.add("is-invalid")
+        document.getElementById(feedbackPlace).innerHTML = this.responseText;
       }
+      
+      if(this.responseText == "") {
+          document.getElementById(inputId).classList.remove("is-invalid")
+          document.getElementById(inputId).classList.add("is-valid")
+          document.getElementById(feedbackPlace).innerHTML = "";
+      }
+    }
   };
+
   xmlhttp.open("GET", `${AJAX_URL}${phpFileName}?text=${text_value}`, true);
   xmlhttp.send();
 }

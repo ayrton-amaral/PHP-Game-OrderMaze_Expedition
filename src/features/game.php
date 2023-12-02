@@ -5,12 +5,12 @@ include_once __DIR__ . '\..\..\db\Insert.php';
 session_start();
 
 if(isset($_POST["send"])){
-
     $currentLevel = $_SESSION['level'];
     $currentLives = $_SESSION['lives'];
     $correctAnswer = $_SESSION['generatedSequence'];
 
     $userAnswer = [];
+
     for($i=1; $i<=6 ; $i++) {
         if(isset($_POST["l".$i])){
             array_push($userAnswer, $_POST["l".$i]);
@@ -19,7 +19,7 @@ if(isset($_POST["send"])){
         }
     }
     
-    //generate the correct answer for each level
+    // Generate the correct answer for each level
     if ($currentLevel == 1 || $currentLevel == 3) {
         // Ascending order for numbers or letters
         sort($correctAnswer);
@@ -32,16 +32,17 @@ if(isset($_POST["send"])){
         $correctAnswer = [min($correctAnswer), max($correctAnswer), "", "", "", ""];
     }
 
-    //compare the correct answer with the user answer and treats it
+    // Compare the correct answer with the user answer and treats it
     var_dump($correctAnswer);
     echo "<br>";
     var_dump($userAnswer);
+
     if (arraysEqual($correctAnswer, $userAnswer)) {
         $currentLevel++;
         echo "Correct!";
 
         if ($currentLevel <= 6) {
-            //startGame();
+            // startGame();
             $_SESSION['level'] = $currentLevel;
             $_SESSION['generatedSequence'] = generateSequence($currentLevel);
             $_SESSION['gameInstruction'] = generateInstruction($currentLevel);
@@ -66,6 +67,7 @@ if(isset($_POST["send"])){
             $_SESSION['lives'] = $currentLives;
             $_SESSION['gameInstruction'] = generateInstruction($currentLevel);
             $_SESSION['gameMessage'] = incorrectAnswer($correctAnswer, $userAnswer, $currentLevel);
+
             //"Incorrect!!! But you still have ".$currentLives." lives! Try again!";
             header("Location: /php-final-project/public/form/game-form.php");
             exit();
@@ -76,11 +78,7 @@ if(isset($_POST["send"])){
             exit();
         }
     }
-
-
-} 
-else {
-
+} else {
     $currentLevel = 1;
     $currentLives = 6;
 
@@ -91,11 +89,7 @@ else {
     $_SESSION['gameMessage'] = "Let's play! You have ". $currentLives . " lives!";
 
     header("Location: /php-final-project/public/form/game-form.php");
+
     exit();
-
 }
-
-
-
-
 ?>

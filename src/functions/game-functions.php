@@ -1,7 +1,5 @@
-
 <?php 
-
-//generate unique random letters - uppercase or lowercase decided randomly
+// Generate unique random letters - uppercase or lowercase decided randomly
 function generateRandomLetters() {
     $isLowercase = rand(0, 1) == 1;
     $letters = $isLowercase ? range('a', 'z') : range('A', 'Z');
@@ -18,7 +16,7 @@ function generateRandomLetters() {
     return $randomLetters;
 }
 
-//generate unique random numbers
+// Generate unique random numbers
 function generateRandomNumbers() {
     $randomNumbers = [];
 
@@ -33,9 +31,7 @@ function generateRandomNumbers() {
     return $randomNumbers;
 }
 
-
-
-// generate sequence of numbers or letters according to the level
+// Generate sequence of numbers or letters according to the level
 function generateSequence($currentLevel) {
 
     if ($currentLevel === 1 || $currentLevel === 2 || $currentLevel === 5) {
@@ -47,9 +43,7 @@ function generateSequence($currentLevel) {
     return $generatedSequence;
 }
 
-
-
-// generate sequence of numbers or letters according to the level
+// Generate sequence of numbers or letters according to the level
 function generateInstruction($currentLevel) {
 
     if ($currentLevel == 1 ){
@@ -83,7 +77,6 @@ function incorrectAnswer($arr1, $arr2, $level) {
     $correctValues = 0;
     sort($arr1);
     sort($arr2);
-
     
     foreach ($arr1 as $key => $value) {
 
@@ -106,7 +99,5 @@ function incorrectAnswer($arr1, $arr2, $level) {
     } 
 
     return $incorrectAnswer;
-
 }
-
 ?>

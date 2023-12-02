@@ -15,3 +15,17 @@ body {
 .ajaxValidationMsg {
   color: #FBBE62;
 }
+.text-muted{
+  color:white !important;
+}
+.my-4{
+  margin-bottom:0px !important;
+}
+footer {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+ 
+  height: 120px; 
+}

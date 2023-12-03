@@ -2,7 +2,14 @@ html,
 body {
   height: 100%;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
 
+main {
+  flex: 1;
+}
 .form-signin {
   max-width: 330px;
   padding: 1rem;
@@ -18,13 +25,7 @@ body {
 .text-muted{
   color:white !important;
 }
-.footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-}
+
 .logo{
   width: 12%;
   height: auto; 
@@ -35,5 +36,4 @@ body {
 .forgotPass{
   text-align: center;
   color: white;
-
 }

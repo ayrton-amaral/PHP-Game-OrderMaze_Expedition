@@ -6,4 +6,5 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Karina Piekarski Siviero Contini</a></li>
     </ul>
     <p class="text-center text-muted">© 2023 OrderMaze Expedition</p>
+
 </footer>

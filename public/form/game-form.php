@@ -59,6 +59,9 @@
       right: 200px; /* Adjust the distance from the right as needed */
       z-index: 1000; /* Adjust the z-index to be higher than other elements */
     }
+    .pb-3{
+      padding-top :3rem !important;
+    }
     </style>
 </head>
 

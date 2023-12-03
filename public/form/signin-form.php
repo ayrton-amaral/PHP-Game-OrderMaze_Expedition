@@ -12,17 +12,10 @@
       position: relative;
     }
 
-    .display-3{
+    .display-5{
       color:white;
-      padding:30px;
     }
-
-    .h6{
-      padding-top:5px;
-      text-align: center;
-      color: white;
-    }
-
+    
     .form-floating {
       padding: 5px;
     }
@@ -40,15 +33,18 @@
     #buttonRegister{
       background-color: #8F3AC6;
     }
-    footer {
-      bottom: 0;
-      width: 100%;
+    .footer{
+      margin-top: 0!important;
+      padding-top:0!important;
     }
   </style>
 </head>
 
 <body>
-    <h1 class="display-3 text-center" id="title">Let's play!</h1>
+  
+  <img src="..\assets\img\Logo for OrderMaze Expedition.png" alt="OrderMaze Expedition logo" class = "logo">
+ 
+  <h1 class="display-5 text-center">Let's play!</h1>
 
     <main class="form-signin w-100 m-auto">
         <form action=<?= FEATURES . "signin.php" ?> method="post">
@@ -72,7 +68,7 @@
         <button class="btn btn-primary w-100 py-2 border-0" id= "buttonRegister" onclick="window.location.href = 'signup-form.php';">Register</button>
 
       </main>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center forgotPass">
         <a href="pw-update-form.php" class="h6">Forgot password?</a>
     </div>
 </body>

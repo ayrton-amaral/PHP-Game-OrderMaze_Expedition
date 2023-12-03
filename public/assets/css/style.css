@@ -18,7 +18,13 @@ body {
 .text-muted{
   color:white !important;
 }
-
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
 .logo{
   width: 12%;
   height: auto; 

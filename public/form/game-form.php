@@ -59,8 +59,12 @@
       right: 200px; /* Adjust the distance from the right as needed */
       z-index: 1000; /* Adjust the z-index to be higher than other elements */
     }
-    .pb-3{
-      padding-top :3rem !important;
+    .footer{
+          position:sticky!important;
+          margin-top:70px!important;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
     }
     </style>
 </head>

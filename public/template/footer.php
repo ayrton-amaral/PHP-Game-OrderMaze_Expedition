@@ -1,4 +1,4 @@
-<footer class="py-3 my-4 footer" >
+<footer class="py-3 my-4" >
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a class="nav-link px-2 text-muted">Ayrton Senna Seraphim Do Amaral</a></li>
       <li class="nav-item"><a class="nav-link px-2 text-muted">Bruno Lemos Landeiro</a></li>

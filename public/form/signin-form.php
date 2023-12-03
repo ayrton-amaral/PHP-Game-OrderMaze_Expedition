@@ -9,11 +9,11 @@
   <style>
     body{
       background-color: #5775FF;
-      position: relative;
     }
 
     .display-5{
       color:white;
+      margin-bottom:0!important;
     }
     
     .form-floating {
@@ -33,10 +33,7 @@
     #buttonRegister{
       background-color: #8F3AC6;
     }
-    .footer{
-      margin-top: 0!important;
-      padding-top:0!important;
-    }
+   
   </style>
 </head>
 

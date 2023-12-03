@@ -59,10 +59,7 @@ function inputStatus($inputId){
     #btnLogin {
       background-color: #5775FF;
     }
-    .footer{
-      margin-top: 0rem!important;
-      padding-top:0!important;
-    }
+    
   </style>
 </head>
 

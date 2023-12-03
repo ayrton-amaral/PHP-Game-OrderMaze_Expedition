@@ -18,14 +18,14 @@ body {
 .text-muted{
   color:white !important;
 }
-.my-4{
-  margin-bottom:0px !important;
+
+.logo{
+  width: 15%;
+  height: auto; 
+  display: block;
+  margin: 0 auto;
 }
-footer {
-  position: absolute;
-  bottom: 3px;
-  left: 0;
-  right: 0;
- 
-  height: 120px; 
+.forgotPass{
+  text-align: center;
+  color: white;
 }

@@ -51,7 +51,7 @@ if(isset($_POST["send"])){
             exit();
         } else {
             echo "You completed all levels! Congratulations!";
-            createScore("win",$_SESSION['lives'] ,$_SESSION['user']['registrationOrder']);
+            createScore("win",6 - $_SESSION['lives'] ,$_SESSION['user']['registrationOrder']);
             header("Location: /php-final-project/public/message/game-won.php");
             exit();
         }
@@ -86,7 +86,15 @@ if(isset($_POST["send"])){
     $_SESSION['generatedSequence'] = generateSequence($currentLevel);
     $_SESSION['lives'] = $currentLives;
     $_SESSION['gameInstruction'] = generateInstruction($currentLevel);
-    $_SESSION['gameMessage'] = "Let's play! You have ". $currentLives . " lives!";
+    if($_SESSION['gameMessage'] == "cancel") {
+        $_SESSION['gameMessage'] = "You canceled the previous game and started a new game. </br></br>Let's play again! You have 6 lives!";
+        
+    } else {
+        $_SESSION['gameMessage'] = "Let's play! You have ". $currentLives . " lives!";
+    }
+
+    
+    
 
     header("Location: /php-final-project/public/form/game-form.php");
 

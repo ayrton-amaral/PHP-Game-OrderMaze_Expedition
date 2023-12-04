@@ -87,7 +87,7 @@ if(isset($_POST["send"])){
     $_SESSION['lives'] = $currentLives;
     $_SESSION['gameInstruction'] = generateInstruction($currentLevel);
     if($_SESSION['gameMessage'] == "cancel") {
-        $_SESSION['gameMessage'] = "You have canceled the previous game.</br></br>Let's play again!";
+        $_SESSION['gameMessage'] = "You have canceled the previous game.</br>Let's play again!";
         
     } else {
         $_SESSION['gameMessage'] = "Let's play! You have ". $currentLives . " lives!";

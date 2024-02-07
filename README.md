@@ -13,10 +13,10 @@ but also contains HTML5, CSS3 and JavaScript codes in the project.
 The database used in the game was the MySQL (version 8.0.27).
 
 Developers:
-Ayrton Senna Seraphim Do Amaral
-Bruno Lemos Landeiro
-Gabriella Miwa Mori Kaku
-Karina Piekarski Siviero Contini
+Ayrton Senna Seraphim Do Amaral;
+Bruno Lemos Landeiro;
+Gabriella Miwa Mori Kaku;
+Karina Piekarski Siviero Contini.
 
 Release date: 
 2023-12-04
